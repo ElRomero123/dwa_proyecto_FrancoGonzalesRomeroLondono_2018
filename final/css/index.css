@@ -1,0 +1,119 @@
+/* line 1, ../sass/index.scss */
+body {
+  background-image: url("../img/fondo.jpg");
+}
+/* line 3, ../sass/index.scss */
+body #loginCard {
+  border-radius: 5px;
+  opacity: 0.8;
+  background-color: black;
+  width: 375px;
+  height: 490px;
+  margin: 30px auto;
+}
+/* line 5, ../sass/index.scss */
+body #loginCard #register:hover {
+  background-color: green;
+}
+/* line 10, ../sass/index.scss */
+body #loginCard #register {
+  left: 35px;
+  border: 2px solid green;
+}
+/* line 16, ../sass/index.scss */
+body #loginCard #send:hover {
+  background-color: orangered;
+}
+/* line 21, ../sass/index.scss */
+body #loginCard #send {
+  left: 30px;
+  border: 2px solid orangered;
+}
+/* line 27, ../sass/index.scss */
+body #loginCard button:hover {
+  color: white;
+  width: 95px;
+  height: 35px;
+}
+/* line 34, ../sass/index.scss */
+body #loginCard button {
+  outline: 0px;
+  transition: 0.15s;
+  position: relative;
+  top: 150px;
+  background-color: white;
+  border-radius: 7px;
+  width: 90px;
+  height: 30px;
+}
+/* line 46, ../sass/index.scss */
+body #loginCard #password {
+  top: 80px;
+}
+/* line 51, ../sass/index.scss */
+body #loginCard #username {
+  top: 50px;
+}
+/* line 57, ../sass/index.scss */
+body #loginCard input:focus {
+  border: 2px solid orangered;
+  width: 210px;
+}
+/* line 63, ../sass/index.scss */
+body #loginCard input {
+  padding: 5px;
+  outline: 0px;
+  transition: 0.15s;
+  font-family: arial;
+  font-size: 14px;
+  border-radius: 3px;
+  border: 2px solid gray;
+  display: flex;
+  color: black;
+  width: 200px;
+  height: 20px;
+  left: 30px;
+  position: relative;
+}
+/* line 80, ../sass/index.scss */
+body #loginCard #tagP {
+  top: 70px;
+}
+/* line 85, ../sass/index.scss */
+body #loginCard #tagU {
+  top: 40px;
+}
+/* line 90, ../sass/index.scss */
+body #loginCard .tag {
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  position: relative;
+  left: 30px;
+}
+/* line 99, ../sass/index.scss */
+body #loginCard #titulo {
+  position: relative;
+  top: 30px;
+  left: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+  color: white;
+}
+/* line 117, ../sass/index.scss */
+body header {
+  opacity: 0.9;
+  border-radius: 5px;
+  background-color: brown;
+  width: 100%;
+  height: 120px;
+  top: 0px;
+  left: 0px;
+}
+/* line 119, ../sass/index.scss */
+body header #texto {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 60px;
+  color: white;
+  margin: 10px;
+}
