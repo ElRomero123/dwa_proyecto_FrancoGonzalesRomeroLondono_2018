@@ -1,6 +1,7 @@
 var send;
 var username;
 var password;
+var cPassword;
 
 window.onload = inicializar;
 
@@ -15,6 +16,7 @@ function initVariables()
     send = document.getElementById('send');
     username = document.getElementById('username');
     password = document.getElementById('password');
+    cPassword = document.getElementById('cPassword');
 }
 
 function initEventos()
@@ -24,8 +26,6 @@ function initEventos()
 
 function login()
 {
-    alert("Hola");
-
     $.ajax
     (
         {
@@ -36,7 +36,9 @@ function login()
             success:
             function (data)
             {
-                alert(data);
+                localStorage.setItem("name", data[0] + " " + data[1]);
+                localStorage.setItem("phone", data[2]);
+                location.href = "../dashboard.html";
             },
 
             error:
@@ -46,4 +48,10 @@ function login()
             }
         }
     );
+}
+
+
+function count()
+{
+    cPassword.innerHTML = password.value.length;
 }

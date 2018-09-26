@@ -16,9 +16,12 @@
             <div id="tagU" class="tag">Usuario:</div>
             <input type="text" id="username">
             <div id="tagP" class="tag">Contraseña:</div>
-            <input type="password" id="password">
+            <input type="password" id="password" onKeyUp="count()">
+
             <button id="send">Enviar</button>
-            <button id="register">Registrarse</button>
+            <button id="register"> <a href="register.html">Registrarse</a> </button>
+            <br /> <br /> <br /> <br />
+            <div class="tag" id="cPassword">CP</div>
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

@@ -117,3 +117,9 @@ body header #texto {
   color: white;
   margin: 10px;
 }
+
+a
+{
+   text-decoration:none;
+   color: black;
+}
