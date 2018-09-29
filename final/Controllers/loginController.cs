@@ -25,9 +25,9 @@ namespace final
                          where (u.Username == username)
                          select new { u.Password, u.Name, u.LastName, u.Phone };
 
-            data[0] = "No found";
-            data[1] = "No found";
-            data[2] = "No found";
+            data[0] = "N";
+            data[1] = "N";
+            data[2] = "N";
 
             if (result != null)
             {

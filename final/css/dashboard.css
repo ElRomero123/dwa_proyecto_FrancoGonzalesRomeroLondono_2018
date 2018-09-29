@@ -1,36 +1,70 @@
 /* line 1, ../sass/dashboard.scss */
 body {
-  background: white;
+  background: brown;
 }
-/* line 2, ../sass/dashboard.scss */
-body #loginCard {
+/* line 3, ../sass/dashboard.scss */
+body #dashboardCard {
   border-radius: 10px;
   background-color: gray;
   margin: 10px auto;
-  width: 350px;
+  width: 100%;
   height: 600px;
 }
-/* line 3, ../sass/dashboard.scss */
-body #loginCard #titulo {
+/* line 5, ../sass/dashboard.scss */
+body #dashboardCard #titulo {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   position: relative;
   top: 20px;
-  left: 10px;
-  color: black;
+  left: 20px;
+  color: white;
 }
 
-/* line 22, ../sass/dashboard.scss */
+/* line 25, ../sass/dashboard.scss */
 header {
   width: 100%;
   height: 120px;
-  background-color: blueviolet;
+  background-color: brown;
   border-radius: 10px;
 }
-/* line 23, ../sass/dashboard.scss */
+/* line 27, ../sass/dashboard.scss */
+header #infoUser {
+  padding: 5px;
+  width: 220px;
+  height: 110px;
+  position: absolute;
+  right: 8px;
+  top: 9px;
+}
+/* line 29, ../sass/dashboard.scss */
+header #infoUser div {
+  margin: 3px;
+}
+/* line 34, ../sass/dashboard.scss */
+header #infoUser #completeName {
+  color: white;
+  font-family: arial;
+  font-size: 14px;
+}
+/* line 41, ../sass/dashboard.scss */
+header #infoUser #phone {
+  color: white;
+  font-family: arial;
+  font-size: 10px;
+}
+/* line 48, ../sass/dashboard.scss */
+header #infoUser #avatar {
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+/* line 64, ../sass/dashboard.scss */
 header #texto {
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 30px;
-  padding: 10px;
+  font-size: 23px;
+  position: absolute;
+  top: 45px;
+  margin: 10px;
 }
