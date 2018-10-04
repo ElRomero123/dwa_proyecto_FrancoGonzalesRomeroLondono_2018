@@ -3,6 +3,7 @@ using System.Web.Http;
 using System.Security.Cryptography;
 using System.Text;
 using O = final.ORM;
+using M = final.Models;
 using System.Linq;
 
 namespace final
@@ -46,8 +47,14 @@ namespace final
         }
 
         // POST api/<controller>
-        public void Post([FromBody]string value)
+        public void Post(M.User entrada)
         {
+             #pragma warning disable CS0618 
+            AutoMapper.Mapper.CreateMap<M.User, O.User>();
+            #pragma warning restore CS0618
+            O.User objectUser = AutoMapper.Mapper.Map<O.User>(entrada);
+            BD.Users.Add(objectUser);
+            BD.SaveChanges();
         }
 
         // PUT api/<controller>/5
