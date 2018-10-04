@@ -30,15 +30,14 @@ function registrar()
 {
     var user =
     {
-        username:username.value,
-        password:password.value,
-        name:nombre.value,
+        username: username.value,
+        password: password.value,
+        name: nombre.value,
         lastName: lastName.value,
         typeDocument: "CC",
-        numDocument:numDocument.value,
-        phone:phone.value,
-        address:address.value,
-        register: register.value,
+        numDocument: numDocument.value,
+        phone: phone.value,
+        address: address.value,
         reputation: 10
     };
 
@@ -52,11 +51,17 @@ function registrar()
             contentType: "application/json;charset=utf-8",
 
             success:
-            function (data)
-            {
-                location.href = "index.html";
-                alert(data);
-            }
+                function (data) {
+                    if (data) {
+                        location.href = "index.html";
+                        alert("Agregado!");
+                    }
+
+                    else {
+                        alert("No se pudo agregar el registro. Puede ser un problema en el formato!");
+                    }
+
+                }
         }
     );
 }

@@ -47,19 +47,29 @@ namespace final
         }
 
         // POST api/<controller>
-        public string Post(M.User entrada)
+        public bool Post(M.User entrada)
         {
+            bool state;
             string CriptoPassword = SHA256Encrypt(entrada.Password);
             entrada.Password = CriptoPassword;
 
-            #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
-            AutoMapper.Mapper.CreateMap<M.User, O.User>();
-            #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
-            O.User BDUser = AutoMapper.Mapper.Map<O.User>(entrada);
-            BD.Users.Add(BDUser);
-            BD.SaveChanges();
+            try
+            {
+                #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
+                AutoMapper.Mapper.CreateMap<M.User, O.User>();
+                #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
+                O.User BDUser = AutoMapper.Mapper.Map<O.User>(entrada);
+                BD.Users.Add(BDUser);
+                BD.SaveChanges();
+                state = true;
+            }
 
-            return "agregado"; 
+            catch
+            {
+                state = false;
+            }
+            
+            return state; 
         }
 
         // PUT api/<controller>/5
