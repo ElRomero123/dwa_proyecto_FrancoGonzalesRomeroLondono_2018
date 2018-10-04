@@ -12,23 +12,43 @@ body #loginCard {
   margin: 30px auto;
 }
 /* line 5, ../sass/index.scss */
-body #loginCard #register:hover {
-  background-color: green;
-}
+    body #loginCard #register:hover {
+        background-color: green;
+        border: 1px solid white;
+    }
+
+
 /* line 10, ../sass/index.scss */
 body #loginCard #register {
   left: 35px;
   border: 2px solid green;
 }
 /* line 16, ../sass/index.scss */
-body #loginCard #send:hover {
-  background-color: orangered;
-}
+    body #loginCard #send:hover {
+        background-color: orangered;
+        border: 1px solid white;
+    }
 /* line 21, ../sass/index.scss */
 body #loginCard #send {
   left: 30px;
   border: 2px solid orangered;
 }
+
+body #loginCard #state 
+{
+    background-color: green;
+    width: 200px;
+    height: 15px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 12px;
+    color: white;
+    padding: 2px;
+    position: relative;
+    left: 30px;
+    top: 110px;
+}
+
 /* line 27, ../sass/index.scss */
 body #loginCard button:hover {
   color: white;
@@ -37,6 +57,7 @@ body #loginCard button:hover {
 }
 /* line 34, ../sass/index.scss */
 body #loginCard button {
+  
   outline: 0px;
   transition: 0.15s;
   position: relative;
@@ -116,4 +137,10 @@ body header #texto {
   font-size: 60px;
   color: white;
   margin: 10px;
+}
+
+a
+{
+   text-decoration:none;
+   color: black;
 }

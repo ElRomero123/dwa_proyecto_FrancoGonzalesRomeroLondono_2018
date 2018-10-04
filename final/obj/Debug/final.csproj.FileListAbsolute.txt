@@ -181,11 +181,15 @@ D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\roslyn\v
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\roslyn\vbc.rsp
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\roslyn\VBCSCompiler.exe
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\roslyn\VBCSCompiler.exe.config
+D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\EntityFramework.dll
+D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\EntityFramework.SqlServer.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\Newtonsoft.Json.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\System.Net.Http.Formatting.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\System.Web.Http.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\System.Web.Http.WebHost.dll
+D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\EntityFramework.xml
+D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\EntityFramework.SqlServer.xml
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\Newtonsoft.Json.xml
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\System.Net.Http.Formatting.xml
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\System.Web.Http.xml
@@ -194,7 +198,6 @@ D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\Microsof
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Net.Http.Formatting.resources.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Web.Http.resources.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Web.Http.WebHost.resources.dll
-D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csprojAssemblyReference.cache
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csproj.CoreCompileInputs.cache
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csproj.CopyComplete
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.dll

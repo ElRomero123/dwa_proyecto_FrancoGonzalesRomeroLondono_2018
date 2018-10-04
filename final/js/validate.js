@@ -1,6 +1,8 @@
 var send;
+var register;
 var username;
 var password;
+var state;
 
 window.onload = inicializar;
 
@@ -13,22 +15,27 @@ function inicializar()
 function initVariables()
 {
     send = document.getElementById('send');
+    register = document.getElementById('register');
     username = document.getElementById('username');
     password = document.getElementById('password');
+    state = document.getElementById('state');
 }
 
 function initEventos()
 {
     send.addEventListener('click', login);
+    register.addEventListener('click', toRegister);
 }
 
 function login()
 {
-    alert("Hola");
+    state.style.background = "orangered";
+    state.innerHTML = "Estamos validando...";
 
     $.ajax
     (
         {
+
             url: '../api/login?username=' + username.value + '&password=' + password.value,
             type: 'GET',
             contentType: "application/json;charset=utf-8",
@@ -36,14 +43,24 @@ function login()
             success:
             function (data)
             {
-                alert(data);
-            },
+                if (data[0] === "N")
+                {
+                    state.style.background = "red";
+                    state.innerHTML = "No te encontramos!";
+                }
 
-            error:
-            function()
-            {
-                alert("No se pudo!");
+                else
+                {
+                    localStorage.setItem("name", data[0] + " " + data[1]);
+                    localStorage.setItem("phone", data[2]);
+                    location.href = "../dashboard.html";
+                }
             }
         }
     );
+}
+
+function toRegister()
+{
+    location.href = "../register.html";
 }
