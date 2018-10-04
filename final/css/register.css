@@ -22,6 +22,7 @@ body #registerCard button:hover {
 }
 /* line 16, ../sass/register.scss */
 body #registerCard button {
+  outline: 0px;
   border-radius: 5px;
   transition: 0.15s;
   display: inline-block;
@@ -34,11 +35,11 @@ body #registerCard button {
   height: 25px;
   margin: 10px;
 }
-/* line 31, ../sass/register.scss */
+/* line 32, ../sass/register.scss */
 body #registerCard input:focus {
   border: 1.5px solid green;
 }
-/* line 36, ../sass/register.scss */
+/* line 37, ../sass/register.scss */
 body #registerCard input {
   padding: 10px;
   border-radius: 10px;
@@ -53,7 +54,7 @@ body #registerCard input {
   width: 230px;
   height: 25px;
 }
-/* line 52, ../sass/register.scss */
+/* line 53, ../sass/register.scss */
 body #registerCard #titulo {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
@@ -61,14 +62,14 @@ body #registerCard #titulo {
   margin: 20px;
 }
 
-/* line 70, ../sass/register.scss */
+/* line 71, ../sass/register.scss */
 header {
   width: 100%;
   height: 120px;
   background-color: blueviolet;
   border-radius: 10px;
 }
-/* line 72, ../sass/register.scss */
+/* line 73, ../sass/register.scss */
 header #texto {
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace final
 {
-    public class LoginController : ApiController
+    public class UserController : ApiController
     {
         private O.BDEatNowEntities BD = new O.BDEatNowEntities();
 
@@ -49,14 +49,17 @@ namespace final
         // POST api/<controller>
         public string Post(M.User entrada)
         {
-             #pragma warning disable CS0618 
-            AutoMapper.Mapper.CreateMap<M.User, O.User>();
-            #pragma warning restore CS0618
-            O.User DBUser = AutoMapper.Mapper.Map<O.User>(entrada);
-            BD.Users.Add(DBUser);
-            BD.SaveChanges();
+            string result = null;
 
-            return "Registro agregado";
+            #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
+            AutoMapper.Mapper.CreateMap<M.User, O.User>();
+            #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
+            O.User BDUser = AutoMapper.Mapper.Map<O.User>(entrada);
+            BD.Users.Add(BDUser);
+            BD.SaveChanges();
+            result = "agregado";
+
+            return result; 
         }
 
         // PUT api/<controller>/5

@@ -1,15 +1,5 @@
 ﻿var register;
-var username, password, name, lastName, numDocument, phone, address;
-
-/*
-<input id="username" placeholder="Nombre de usuario" />
-    <input id="password" placeholder="Contraseña" />
-    <input id="name" placeholder="Nombre" />
-    <input id="lastName" placeholder="Apellido" />
-    <input id="numDocument" placeholder="Número documento (sin comas, ni puntos)" />
-    <input id="phone" placeholder="Fijo o celular" />
-    <input id="address" placeholder="Dirección residencia" />
-    */
+var username, password, nombre, lastName, numDocument, phone, address;
 
 window.onload = inicializar;
 
@@ -23,7 +13,7 @@ function initVariables()
 {
     username = document.getElementById('username');
     password = document.getElementById('password');
-    name = document.getElementById('name');
+    nombre = document.getElementById('nombre');
     lastName = document.getElementById('lastName');
     numDocument = document.getElementById('numDocument');
     phone = document.getElementById('phone');
@@ -42,7 +32,7 @@ function registrar()
     {
         username:username.value,
         password:password.value,
-        name:name.value,
+        name:nombre.value,
         lastName: lastName.value,
         typeDocument: "CC",
         numDocument:numDocument.value,
@@ -51,7 +41,6 @@ function registrar()
         register: register.value,
         reputation: 10
     };
-
 
     $.ajax
     (
