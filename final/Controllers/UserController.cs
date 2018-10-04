@@ -47,14 +47,16 @@ namespace final
         }
 
         // POST api/<controller>
-        public void Post(M.User entrada)
+        public string Post(M.User entrada)
         {
              #pragma warning disable CS0618 
             AutoMapper.Mapper.CreateMap<M.User, O.User>();
             #pragma warning restore CS0618
-            O.User objectUser = AutoMapper.Mapper.Map<O.User>(entrada);
-            BD.Users.Add(objectUser);
+            O.User DBUser = AutoMapper.Mapper.Map<O.User>(entrada);
+            BD.Users.Add(DBUser);
             BD.SaveChanges();
+
+            return "Registro agregado";
         }
 
         // PUT api/<controller>/5

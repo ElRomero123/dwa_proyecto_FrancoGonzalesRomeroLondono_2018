@@ -36,7 +36,7 @@ function login()
     (
         {
 
-            url: '../api/login?username=' + username.value + '&password=' + password.value,
+            url: '../api/user?username=' + username.value + '&password=' + password.value,
             type: 'GET',
             contentType: "application/json;charset=utf-8",
 

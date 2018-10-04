@@ -97,6 +97,7 @@
     <Content Include="img\fondo.jpg" />
     <Content Include="img\logo.ico" />
     <Content Include="index.html" />
+    <Content Include="js\register.js" />
     <Content Include="js\validate.js" />
     <Content Include="ORM\ModelEatNow.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -116,7 +117,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ORM\ModelEatNow.Context.cs">
       <AutoGen>True</AutoGen>
