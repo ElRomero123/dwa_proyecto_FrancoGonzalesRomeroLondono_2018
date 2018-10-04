@@ -49,7 +49,8 @@ namespace final
         // POST api/<controller>
         public string Post(M.User entrada)
         {
-            string result = null;
+            string CriptoPassword = SHA256Encrypt(entrada.Password);
+            entrada.Password = CriptoPassword;
 
             #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
             AutoMapper.Mapper.CreateMap<M.User, O.User>();
@@ -57,9 +58,8 @@ namespace final
             O.User BDUser = AutoMapper.Mapper.Map<O.User>(entrada);
             BD.Users.Add(BDUser);
             BD.SaveChanges();
-            result = "agregado";
 
-            return result; 
+            return "agregado"; 
         }
 
         // PUT api/<controller>/5

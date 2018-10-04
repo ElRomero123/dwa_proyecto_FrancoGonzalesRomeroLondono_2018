@@ -54,6 +54,7 @@ function registrar()
             success:
             function (data)
             {
+                location.href = "index.html";
                 alert(data);
             }
         }
