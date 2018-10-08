@@ -200,7 +200,6 @@ D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\Microsof
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Net.Http.Formatting.resources.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Web.Http.resources.dll
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\bin\es\System.Web.Http.WebHost.resources.dll
-D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csprojAssemblyReference.cache
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csproj.CoreCompileInputs.cache
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.csproj.CopyComplete
 D:\Universidad\Universidad20182\CPDesarrolloWebAvanzado\final\final\obj\Debug\final.dll

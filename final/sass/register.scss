@@ -5,6 +5,22 @@
 body {
     #registerCard 
     {
+        #state
+        {
+            background-color: green;
+            width: 250px;
+            height: 15px;
+            visibility: hidden;
+            border-radius: 3px;
+            font-family: Arial;
+            font-size: 12px;
+            color: white;
+            padding: 2px;
+            position: relative;
+            left: 15px;
+            top: 1px;
+        }
+
         button:hover
         {
             display: inline-block;
@@ -26,7 +42,7 @@ body {
             font-size: 14px;
             width: 150px;
             height: 25px;
-            margin: 10px;
+            margin: 15px;
         }
 
         input:focus
@@ -55,16 +71,18 @@ body {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 20px;
             color: black;
-            margin: 20px;
+            margin: 15px;
         }
 
+        padding: 10px;
         border-radius: 10px;
         background-color: gray;
         margin: 10px auto;
-        width: 350px;
-        height: 600px;
+        width: 285px;
+        height: 690px;
     }
 
+    
     background: white;
 }
 

@@ -1,5 +1,6 @@
 /* line 1, ../sass/index.scss */
 body {
+  
   background-image: url("../img/fondo.jpg");
 }
 /* line 3, ../sass/index.scss */
@@ -7,9 +8,10 @@ body #loginCard {
   border-radius: 5px;
   opacity: 0.8;
   background-color: black;
-  width: 375px;
+  width: 305px;
   height: 490px;
-  margin: 30px auto;
+  margin: 10px auto;
+  padding: 10px;
 }
 /* line 5, ../sass/index.scss */
     body #loginCard #register:hover {
@@ -39,6 +41,7 @@ body #loginCard #state
     background-color: green;
     width: 200px;
     height: 15px;
+    visibility: hidden;
     border-radius: 3px;
     font-family: Arial;
     font-size: 12px;
@@ -126,10 +129,11 @@ body header {
   opacity: 0.9;
   border-radius: 5px;
   background-color: brown;
-  width: 100%;
+  width: 325px;
   height: 120px;
   top: 0px;
   left: 0px;
+  margin: 10px auto;
 }
 /* line 119, ../sass/index.scss */
 body header #texto {

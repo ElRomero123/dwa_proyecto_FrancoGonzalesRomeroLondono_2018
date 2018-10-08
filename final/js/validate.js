@@ -29,6 +29,7 @@ function initEventos()
 
 function login()
 {
+    state.style.visibility = "visible";
     state.style.background = "orangered";
     state.innerHTML = "Estamos validando...";
 
