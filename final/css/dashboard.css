@@ -11,6 +11,39 @@ body #dashboardCard {
   margin: 10px auto;
 }
 /* line 5, ../sass/dashboard.scss */
+body #dashboardCard div {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+/* line 7, ../sass/dashboard.scss */
+body #dashboardCard div #salir {
+  background-image: url("../img/logout.png");
+}
+/* line 12, ../sass/dashboard.scss */
+body #dashboardCard div #creacionGrupo {
+  background-image: url("../img/group.png");
+}
+/* line 17, ../sass/dashboard.scss */
+body #dashboardCard div #reserva {
+  background-image: url("../img/reserva.png");
+}
+/* line 22, ../sass/dashboard.scss */
+body #dashboardCard div button:hover {
+  filter: invert(100%);
+}
+/* line 27, ../sass/dashboard.scss */
+body #dashboardCard div button {
+  margin: 5px;
+  display: inline-block;
+  transition: 0.15s;
+  outline: 0px;
+  border: 0px;
+  border-radius: 5px;
+  width: 140px;
+  height: 140px;
+  background: aliceblue;
+}
+/* line 44, ../sass/dashboard.scss */
 body #dashboardCard #titulo {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
@@ -20,14 +53,14 @@ body #dashboardCard #titulo {
   color: white;
 }
 
-/* line 25, ../sass/dashboard.scss */
+/* line 64, ../sass/dashboard.scss */
 header {
   width: 100%;
   height: 120px;
   background-color: brown;
   border-radius: 10px;
 }
-/* line 27, ../sass/dashboard.scss */
+/* line 66, ../sass/dashboard.scss */
 header #infoUser {
   padding: 5px;
   width: 220px;
@@ -36,30 +69,30 @@ header #infoUser {
   right: -53px;
   top: 9px;
 }
-/* line 29, ../sass/dashboard.scss */
+/* line 68, ../sass/dashboard.scss */
 header #infoUser div {
   margin: 3px;
 }
-/* line 34, ../sass/dashboard.scss */
+/* line 73, ../sass/dashboard.scss */
 header #infoUser #completeName {
   color: white;
   font-family: arial;
   font-size: 12px;
 }
-/* line 41, ../sass/dashboard.scss */
+/* line 80, ../sass/dashboard.scss */
 header #infoUser #phone {
   color: white;
   font-family: arial;
   font-size: 8px;
 }
-/* line 48, ../sass/dashboard.scss */
+/* line 87, ../sass/dashboard.scss */
 header #infoUser #avatar {
   background-color: white;
   width: 50px;
   height: 50px;
   border-radius: 10px;
 }
-/* line 64, ../sass/dashboard.scss */
+/* line 103, ../sass/dashboard.scss */
 header #texto {
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
