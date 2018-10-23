@@ -50,7 +50,6 @@ function initRestaurants()
                
                 for (i = 0; i < data.length; i++)
                 {
-                    //$(i).style.background = 'url(' + data[i][6] + ')';
                     document.getElementById(data[i][0]).style.background = 'url(' + data[i][6] + ')';
                 }
             }
