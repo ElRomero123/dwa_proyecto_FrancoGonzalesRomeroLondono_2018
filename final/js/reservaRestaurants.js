@@ -1,4 +1,4 @@
-﻿var nombre, phone;
+﻿var nombre, phone, avatar;
 var back, menu;
 var botonId;
 
@@ -24,9 +24,11 @@ function initProfile()
 {
     nombre = document.getElementById('completeName');
     phone = document.getElementById('phone');
+    avatar = document.getElementById('avatar'); 
 
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
+    avatar.style.background = 'url(' + localStorage.getItem('avatar') + ')';
 }
 
 function initRestaurants()
@@ -72,6 +74,7 @@ function initEventos()
 
 function cargarRestaurante(btn)
 {
+    back.style.display = "inline-block";
     $('#listOptions').empty();
 
     $.ajax

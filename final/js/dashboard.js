@@ -1,4 +1,4 @@
-var nombre,phone;
+var nombre,phone,avatar;
 var reserva, creacionGrupo, salir;
 
 window.onload = inicializar;
@@ -21,10 +21,12 @@ function inicializar()
 function initProfile()
 {
     nombre = document.getElementById('completeName'); 
-    phone = document.getElementById('phone'); 
+    phone = document.getElementById('phone');
+    avatar = document.getElementById('avatar'); 
     
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
+    avatar.style.background = 'url(' + localStorage.getItem('avatar') + ')';
 }
 
 function initVariables()

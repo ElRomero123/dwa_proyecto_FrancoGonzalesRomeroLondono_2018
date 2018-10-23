@@ -54,6 +54,7 @@ function login()
                 {
                     localStorage.setItem("name", data[0] + " " + data[1]);
                     localStorage.setItem("phone", data[2]);
+                    localStorage.setItem("avatar", data[3]);
                     location.href = "../dashboard.html";
                 }
             }

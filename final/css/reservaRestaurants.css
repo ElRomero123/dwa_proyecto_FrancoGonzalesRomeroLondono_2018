@@ -23,7 +23,7 @@ body #restaurantsCard div .restaurants:hover {
 body #restaurantsCard div .restaurants {
   transition: 0.15s;
   margin: 5px;
-  display: inline-block;
+  display: flex;
   outline: 0px;
   border: 0px;
   border-radius: 5px;
