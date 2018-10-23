@@ -42,7 +42,7 @@ function initRestaurants()
                 var elements = '';
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button id="' + data[i][0] + '" class="restaurants"> <div> <div>' + data[i][1] + '</div> <div>' + data[i][3] + '</div> <div>' + data[i][5] + '</div> <div>' + data[i][4] + '</div> </div> </button>';
+                    elements += '<button id="' + data[i][0] + '" class="restaurants" onclick="cargarRestaurante(this)"> <div> <div>' + data[i][1] + '</div> <div>' + data[i][3] + '</div> <div>' + data[i][5] + '</div> <div>' + data[i][4] + '</div> </div> </button>';
                 }
 
                 $('#listOptions').append(elements);
@@ -67,7 +67,29 @@ function initEventos()
     regresar.addEventListener('click', regresarMenu);
 }
 
+function cargarRestaurante(boton)
+{
+    $.ajax
+    (
+        {
+            url: '../api/food?idRestaurant=' + boton.id + '&type=' + 1,
+            type: 'GET',
+            contentType: "application/json;charset=utf-8",
+            success:
+            function (data)
+            {
+                for (var i = 0; i < data.length; i++)
+                {
+                    alert(data[i][0] + " " + data[i][1]);
+                }
+            }
+        }
+    );
+}
+
 function regresarMenu()
 {
     location.href = "dashboard.html";
+
+    
 }
