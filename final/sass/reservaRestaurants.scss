@@ -4,17 +4,29 @@ body
     { 
         div
         {
+            .restaurants
+            {
+                margin: 5px;
+                display: inline-block;
+                outline: 0px;
+                border: 0px;
+                border-radius: 5px;
+                width: 200px;
+                height: 200px;
+                background: aliceblue;
+            }
+
             #regresar
             {
                 background-image: url("../img/logout.png");
             }
 
-            button:hover
+            .optionButton:hover
             {
                 filter: invert(100%);
             }
     
-            button
+            .optionButton
             {
                 margin: 5px;
                 display: inline-block;
