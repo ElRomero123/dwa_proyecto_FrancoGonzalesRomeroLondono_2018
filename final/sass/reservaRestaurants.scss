@@ -1,22 +1,12 @@
 body 
 {
-    #dashboardCard 
-    {
+    #restaurantsCard 
+    { 
         div
         {
-            #salir
+            #regresar
             {
                 background-image: url("../img/logout.png");
-            }
-
-            #creacionGrupo
-            {
-                background-image: url("../img/group.png");
-            }
-
-            #reserva
-            {
-                background-image: url("../img/reserva.png");
             }
 
             button:hover
@@ -40,7 +30,7 @@ body
             margin-top: 30px;
             margin-left: 20px;
         }
-        
+
         #titulo 
         {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

@@ -12,27 +12,25 @@ namespace final.ORM
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Restaurant
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public User()
+        public Restaurant()
         {
-            this.Restaurants = new HashSet<Restaurant>();
+            this.Foods = new HashSet<Food>();
         }
     
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
         public string Name { get; set; }
-        public string LastName { get; set; }
-        public string TypeDocument { get; set; }
-        public long NumDocument { get; set; }
-        public long Phone { get; set; }
+        public string Background { get; set; }
+        public string City { get; set; }
         public string Address { get; set; }
-        public int Reputation { get; set; }
+        public long Phone { get; set; }
         public string Avatar { get; set; }
+        public int IdOwner { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurant> Restaurants { get; set; }
+        public virtual ICollection<Food> Foods { get; set; }
+        public virtual User User { get; set; }
     }
 }

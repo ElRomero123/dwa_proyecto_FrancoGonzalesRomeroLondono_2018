@@ -91,13 +91,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\dashboard.css" />
     <Content Include="css\index.css" />
+    <Content Include="css\register.css" />
+    <Content Include="css\reservaRestaurants.css" />
     <Content Include="dashboard.html" />
     <Content Include="Global.asax" />
     <Content Include="img\fondo.jpg" />
     <Content Include="img\logo.ico" />
     <Content Include="index.html" />
+    <Content Include="js\dashboard.js" />
     <Content Include="js\register.js" />
+    <Content Include="js\reservaRestaurants.js" />
     <Content Include="js\validate.js" />
     <Content Include="ORM\ModelEatNow.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -110,6 +115,7 @@
       <LastGenOutput>ModelEatNow.cs</LastGenOutput>
     </Content>
     <Content Include="register.html" />
+    <Content Include="reservaRestaurants.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="ORM\Food.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
+    </Compile>
     <Compile Include="ORM\ModelEatNow.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +142,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelEatNow.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Restaurant.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
     </Compile>
     <Compile Include="ORM\User.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
