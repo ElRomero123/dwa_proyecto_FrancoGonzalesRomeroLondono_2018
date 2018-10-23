@@ -42,7 +42,7 @@ function initRestaurants()
                 var elements = '';
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button id="' + data[i][0] + '" class="restaurants"></button>';
+                    elements += '<button id="' + data[i][0] + '" class="restaurants"> <div> <div>' + data[i][1] + '</div> <div>' + data[i][3] + '</div> <div>' + data[i][5] + '</div> <div>' + data[i][4] + '</div> </div> </button>';
                 }
 
                 $('#listOptions').append(elements);

@@ -26,23 +26,29 @@ namespace final
                          where (u.Username == username)
                          select new { u.Password, u.Name, u.LastName, u.Phone };
 
-            data[0] = "N";
-            data[1] = "N";
-            data[2] = "N";
-
-            if (result != null)
+            try
             {
-                var result1 = result.ToArray()[0];
-
-                var hash = SHA256Encrypt(password);
-                if (result1.Password == SHA256Encrypt(password))
+                if (result != null)
                 {
-                    data[0] = result1.Name;
-                    data[1] = result1.LastName;
-                    data[2] = result1.Phone.ToString();
+                    var result1 = result.ToArray()[0];
+
+                    var hash = SHA256Encrypt(password);
+                    if (result1.Password == SHA256Encrypt(password))
+                    {
+                        data[0] = result1.Name;
+                        data[1] = result1.LastName;
+                        data[2] = result1.Phone.ToString();
+                    }
                 }
             }
-            
+
+            catch
+            {
+                data[0] = "N";
+                data[1] = "N";
+                data[2] = "N";
+            }
+          
             return data;
         }
 

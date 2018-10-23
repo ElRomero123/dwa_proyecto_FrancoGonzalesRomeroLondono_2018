@@ -25,13 +25,13 @@ namespace final
                     var registro = result.ToArray()[i];
                     string[] registroArr = new string[7];
 
-                    registroArr[0] = registro.Id.ToString();
-                    registroArr[1] = registro.Name;
+                    registroArr[0] = registro.Id.ToString(); //
+                    registroArr[1] = registro.Name; //
                     registroArr[2] = registro.Phone.ToString();
-                    registroArr[3] = registro.Background;
-                    registroArr[4] = registro.Address;
-                    registroArr[5] = registro.City;
-                    registroArr[6] = registro.Avatar;
+                    registroArr[3] = registro.Background; //
+                    registroArr[4] = registro.Address; //
+                    registroArr[5] = registro.City;//
+                    registroArr[6] = registro.Avatar;//
 
                     data[i] = registroArr;
                 }

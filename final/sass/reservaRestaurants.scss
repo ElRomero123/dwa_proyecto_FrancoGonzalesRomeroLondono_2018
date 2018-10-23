@@ -4,8 +4,31 @@ body
     { 
         div
         {
+            .restaurants:hover
+            {
+                border: 3px solid brown;
+            }
+
             .restaurants
             {
+                div
+                {
+                    div
+                    {
+                        color: white;
+                        font-family: arial;
+                        font-size: 13px;
+                        margin: 2px; 
+                    }
+
+                    padding: 5px;
+                    margin: auto 3px;
+                    background-color: black;
+                    opacity: 0.8;
+                    border-radius: 5px;
+                }
+
+                transition: 0.15s;
                 margin: 5px;
                 display: inline-block;
                 outline: 0px;
@@ -16,31 +39,27 @@ body
                 background: aliceblue;
             }
 
-            #regresar
-            {
-                background-image: url("../img/logout.png");
-            }
-
-            .optionButton:hover
-            {
-                filter: invert(100%);
-            }
-    
-            .optionButton
-            {
-                margin: 5px;
-                display: inline-block;
-                transition: 0.15s;
-                outline: 0px;
-                border: 0px;
-                border-radius: 5px;
-                width: 80px;
-                height: 80px;
-                background: aliceblue;
-            }
-
             margin-top: 30px;
             margin-left: 20px;
+        }
+
+        #regresar:hover
+        {
+            filter: invert(100%);
+        }
+
+        #regresar
+        {
+            transition: 0.15s;
+            margin-top: 35px;
+            margin-left: 30px;
+            outline: 0px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: white;
+            background-image: url('../img/logout.png');
+            width: 80px;
+            height: 80px;
         }
 
         #titulo 
