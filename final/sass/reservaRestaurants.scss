@@ -2,8 +2,56 @@ body
 {
     #restaurantsCard 
     { 
-        div
+        #listOptions
         {
+            .card
+            {
+                .foods:hover
+                {
+                    border: 3px solid brown;
+                }
+
+                .foods
+                {
+                    div
+                    {
+                        div
+                        {
+                            color: white;
+                            font-family: arial;
+                            font-size: 13px;
+                            margin: 2px; 
+                        }
+
+                        padding: 5px;
+                        margin: auto 3px;
+                        background-color: black;
+                        opacity: 0.8;
+                        border-radius: 5px;
+                    }
+
+                    transition: 0.15s;
+                    margin: 5px;
+                    display: flex;
+                    outline: 0px;
+                    border: 0px;
+                    border-radius: 5px;
+                    width: 200px;
+                    height: 200px;
+                    background: aliceblue;
+                }
+
+                #title
+                {
+                    color: white;
+                    font-size: 20px;
+                    font-family: arial;
+                    margin: 10px;
+                }
+
+                display: inline-block;
+            }
+            
             .restaurants:hover
             {
                 border: 3px solid brown;
@@ -39,37 +87,9 @@ body
                 background: aliceblue;
             }
 
-            #bebida
-            {
-                background-color: orangered;
-            }
-
-            #plato
-            {
-                background-color:brown;
-            }
-
-            #aperitivo
-            {
-                background-color: blue;
-            }
-
-            .banner
-            {
-                display: inline-block;
-                border-radius: 5px;
-                color: white;
-                font-family: arial;
-                font-size: 20px;
-                padding: 10px;
-                width: 120px;
-                margin: 15px;
-            }
-
-            margin-top: 30px;
-            margin-left: 20px;
+            margin: 20px;
         }
-
+                
         #menu
         {
             background-image: url('../img/menu.png');
@@ -111,12 +131,15 @@ body
         border-radius: 10px;
         background-color: gray; 
         width: 100%;
-        height: auto;
+        height: auto + 10px;
         margin: 10px auto;
+        padding: 10px;
+
     }
 
-    background: brown;
+    background-color: brown;
 }
+
 
 header 
 {
