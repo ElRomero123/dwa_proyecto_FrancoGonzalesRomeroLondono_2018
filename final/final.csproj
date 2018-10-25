@@ -97,7 +97,12 @@
     <Content Include="css\reservaRestaurants.css" />
     <Content Include="dashboard.html" />
     <Content Include="Global.asax" />
+    <Content Include="img\back.png" />
     <Content Include="img\fondo.jpg" />
+    <Content Include="img\group.png" />
+    <Content Include="img\logout.png" />
+    <Content Include="img\menu.png" />
+    <Content Include="img\reserva.png" />
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\register.js" />
