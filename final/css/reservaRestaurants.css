@@ -4,6 +4,25 @@ body {
 }
 /* line 3, ../sass/reservaRestaurants.scss */
 body #restaurantsCard {
+        /*
+        button:hover
+        {
+            filter: invert(100%);
+        }
+
+        button
+        {
+            transition: 0.15s;
+            margin-top: 35px;
+            margin-left: 30px;
+            outline: 0px;
+            border: 0px;
+            border-radius: 5px;
+            background-color: white;
+            width: 80px;
+            height: 80px;
+        }
+        */
   border-radius: 10px;
   background-color: gray;
   width: 100%;
@@ -13,17 +32,20 @@ body #restaurantsCard {
 }
 /* line 5, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions {
+  /*
+  .restaurants:hover
+  {
+      border: 3px solid brown;
+  }
+  */
   margin: 20px;
 }
 /* line 7, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .card {
+  vertical-align: top;
   display: inline-block;
 }
 /* line 9, ../sass/reservaRestaurants.scss */
-body #restaurantsCard #listOptions .card .foods:hover {
-  border: 3px solid brown;
-}
-/* line 14, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .card .foods {
   transition: 0.15s;
   margin: 5px;
@@ -35,7 +57,7 @@ body #restaurantsCard #listOptions .card .foods {
   height: 200px;
   background: aliceblue;
 }
-/* line 16, ../sass/reservaRestaurants.scss */
+/* line 11, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .card .foods div {
   padding: 5px;
   margin: auto 3px;
@@ -43,27 +65,22 @@ body #restaurantsCard #listOptions .card .foods div {
   opacity: 0.8;
   border-radius: 5px;
 }
-/* line 18, ../sass/reservaRestaurants.scss */
+/* line 13, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .card .foods div div {
   color: white;
   font-family: arial;
   font-size: 13px;
   margin: 2px;
 }
-/* line 44, ../sass/reservaRestaurants.scss */
+/* line 39, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .card #title {
   color: white;
   font-size: 20px;
   font-family: arial;
   margin: 10px;
 }
-/* line 55, ../sass/reservaRestaurants.scss */
-body #restaurantsCard #listOptions .restaurants:hover {
-  border: 3px solid brown;
-}
-/* line 60, ../sass/reservaRestaurants.scss */
+/* line 58, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .restaurants {
-  transition: 0.15s;
   margin: 5px;
   display: flex;
   outline: 0px;
@@ -73,7 +90,7 @@ body #restaurantsCard #listOptions .restaurants {
   height: 200px;
   background: aliceblue;
 }
-/* line 62, ../sass/reservaRestaurants.scss */
+/* line 60, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .restaurants div {
   padding: 5px;
   margin: auto 3px;
@@ -81,38 +98,22 @@ body #restaurantsCard #listOptions .restaurants div {
   opacity: 0.8;
   border-radius: 5px;
 }
-/* line 64, ../sass/reservaRestaurants.scss */
+/* line 62, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #listOptions .restaurants div div {
   color: white;
   font-family: arial;
   font-size: 13px;
   margin: 2px;
 }
-/* line 93, ../sass/reservaRestaurants.scss */
+/* line 90, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #menu {
   background-image: url("../img/menu.png");
 }
-/* line 98, ../sass/reservaRestaurants.scss */
+/* line 95, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #back {
   background-image: url("../img/back.png");
 }
-/* line 103, ../sass/reservaRestaurants.scss */
-body #restaurantsCard button:hover {
-  filter: invert(100%);
-}
-/* line 108, ../sass/reservaRestaurants.scss */
-body #restaurantsCard button {
-  transition: 0.15s;
-  margin-top: 35px;
-  margin-left: 30px;
-  outline: 0px;
-  border: 0px;
-  border-radius: 5px;
-  background-color: white;
-  width: 80px;
-  height: 80px;
-}
-/* line 121, ../sass/reservaRestaurants.scss */
+/* line 120, ../sass/reservaRestaurants.scss */
 body #restaurantsCard #titulo {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
@@ -122,14 +123,14 @@ body #restaurantsCard #titulo {
   color: white;
 }
 
-/* line 144, ../sass/reservaRestaurants.scss */
+/* line 143, ../sass/reservaRestaurants.scss */
 header {
   width: 100%;
   height: 120px;
   background-color: brown;
   border-radius: 10px;
 }
-/* line 146, ../sass/reservaRestaurants.scss */
+/* line 145, ../sass/reservaRestaurants.scss */
 header #infoUser {
   padding: 5px;
   width: 220px;
@@ -138,30 +139,30 @@ header #infoUser {
   right: -53px;
   top: 9px;
 }
-/* line 148, ../sass/reservaRestaurants.scss */
+/* line 147, ../sass/reservaRestaurants.scss */
 header #infoUser div {
   margin: 3px;
 }
-/* line 153, ../sass/reservaRestaurants.scss */
+/* line 152, ../sass/reservaRestaurants.scss */
 header #infoUser #completeName {
   color: white;
   font-family: arial;
   font-size: 12px;
 }
-/* line 160, ../sass/reservaRestaurants.scss */
+/* line 159, ../sass/reservaRestaurants.scss */
 header #infoUser #phone {
   color: white;
   font-family: arial;
   font-size: 8px;
 }
-/* line 167, ../sass/reservaRestaurants.scss */
+/* line 166, ../sass/reservaRestaurants.scss */
 header #infoUser #avatar {
   background-color: white;
   width: 50px;
   height: 50px;
   border-radius: 10px;
 }
-/* line 183, ../sass/reservaRestaurants.scss */
+/* line 182, ../sass/reservaRestaurants.scss */
 header #texto {
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

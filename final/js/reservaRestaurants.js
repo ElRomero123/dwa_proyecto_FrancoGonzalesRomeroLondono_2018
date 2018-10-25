@@ -90,10 +90,10 @@ function cargarRestaurante(btn)
   
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> </div> </button>';
+                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">APERITIVOS</div>' + elements + '</div>');
+                $('#listOptions').append('<div class="card"> <div id="title">APERITIVOS</div> <form action="1">' + elements + '</div> </form>');
             }
         }
     );
@@ -111,10 +111,10 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button class="restaurants"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> </div> </button>';
+                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">PLATOS</div>' + elements + '</div>');
+                $('#listOptions').append('<div class="card"> <div id="title">PLATOS</div> <form action="2">' + elements + '</div> </form>');
             }
         }
     );
@@ -132,10 +132,10 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button class="restaurants"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> </div> </button>';
+                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">BEBIDAS</div>' + elements + '</div>');
+                $('#listOptions').append('<div class="card"> <div id="title">BEBIDAS</div> <form action="3">' + elements + '</div> </form>');
             }
         }
     );
