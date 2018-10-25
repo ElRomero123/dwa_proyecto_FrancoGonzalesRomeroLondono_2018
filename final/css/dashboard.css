@@ -28,11 +28,11 @@ body #dashboardCard div #reserva {
   background-image: url("../img/reserva.png");
 }
 /* line 22, ../sass/dashboard.scss */
-body #dashboardCard div button:hover {
+body #dashboardCard div .optionMenu:hover {
   filter: invert(100%);
 }
 /* line 27, ../sass/dashboard.scss */
-body #dashboardCard div button {
+body #dashboardCard div .optionMenu {
   margin: 5px;
   display: inline-block;
   transition: 0.15s;

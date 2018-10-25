@@ -33,7 +33,7 @@ function registrar()
     state.style.background = "orangered";
     state.innerHTML = "Estamos creando el usuario...";
 
-    if (password.value == passwordAgain.value)
+    if (password.value === passwordAgain.value)
     {
         if (!isNaN(numDocument.value) && !isNaN(phone.value))
         {

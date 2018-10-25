@@ -98,7 +98,6 @@
     <Content Include="dashboard.html" />
     <Content Include="Global.asax" />
     <Content Include="img\fondo.jpg" />
-    <Content Include="img\logo.ico" />
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\register.js" />
@@ -162,6 +161,8 @@
       <DependentUpon>ModelEatNow.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\eatnow - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eatnow - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

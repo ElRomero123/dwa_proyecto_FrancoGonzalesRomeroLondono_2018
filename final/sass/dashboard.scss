@@ -19,12 +19,12 @@ body
                 background-image: url("../img/reserva.png");
             }
 
-            button:hover
+            .optionMenu:hover
             {
                 filter: invert(100%);
             }
     
-            button
+            .optionMenu
             {
                 margin: 5px;
                 display: inline-block;
