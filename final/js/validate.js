@@ -36,15 +36,13 @@ function login()
     $.ajax
     (
         {
-
             url: '../api/user?username=' + username.value + '&password=' + password.value,
             type: 'GET',
             contentType: "application/json;charset=utf-8",
-
             success:
             function (data)
             {
-                if (data[0] === "N")
+                if(data[0] === "N" || data[0] === null)
                 {
                     state.style.background = "red";
                     state.innerHTML = "No te encontramos!";
