@@ -13,7 +13,7 @@ namespace final
         {
             var result = from f in BD.Foods
                          where (f.IdRestaurant == idRestaurant && f.Kind == type)
-                         select new {f.Id, f.Name, f.Description, f.Price};
+                         select new {f.Id, f.Name, f.Description, f.Price, f.Avatar};
 
             string[][] data = null;
 
@@ -24,12 +24,13 @@ namespace final
                 for (int i = 0; i < data.Length; i++)
                 {
                     var registro = result.ToArray()[i];
-                    string[] registroArr = new string[4];
+                    string[] registroArr = new string[5];
 
                     registroArr[0] = registro.Id.ToString(); 
                     registroArr[1] = registro.Name;
                     registroArr[2] = registro.Description;
                     registroArr[3] = registro.Price.ToString();
+                    registroArr[4] = registro.Avatar;
 
                     data[i] = registroArr;
                 }

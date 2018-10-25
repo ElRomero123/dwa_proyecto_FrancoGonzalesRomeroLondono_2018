@@ -90,10 +90,15 @@ function cargarRestaurante(btn)
   
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
+                    elements += '<div id="' + data[i][0] + '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
                 $('#listOptions').append('<div class="card"> <div id="title">APERITIVOS</div> <form action="1">' + elements + '</div> </form>');
+
+                for (i = 0; i < data.length; i++)
+                {
+                    document.getElementById(data[i][0]).style.background = 'url(' + data[i][4] + ')';
+                }
             }
         }
     );
@@ -111,10 +116,15 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
+                    elements += '<div id="' + data[i][0] + '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
                 $('#listOptions').append('<div class="card"> <div id="title">PLATOS</div> <form action="2">' + elements + '</div> </form>');
+
+                for (i = 0; i < data.length; i++)
+                {
+                    document.getElementById(data[i][0]).style.background = 'url(' + data[i][4] + ')';
+                }
             }
         }
     );
@@ -132,10 +142,15 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div class="foods"> <div> <div>' + data[i][0] + '</div> <div>' + data[i][1] + '</div> <div>' + data[i][2] + '</div> <div>' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
+                    elements += '<div id="' + data[i][0] + '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="gender" value="male"> </div> </div>';
                 }
 
                 $('#listOptions').append('<div class="card"> <div id="title">BEBIDAS</div> <form action="3">' + elements + '</div> </form>');
+
+                for (i = 0; i < data.length; i++)
+                {
+                    document.getElementById(data[i][0]).style.background = 'url(' + data[i][4] + ')';
+                }
             }
         }
     );
