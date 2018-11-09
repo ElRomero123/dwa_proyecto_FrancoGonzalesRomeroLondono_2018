@@ -43,5 +43,38 @@ namespace final
             
             return data;
         }
+
+        public string[][] Get(int id)
+        {
+            var result = from f in BD.Foods
+                         where (f.Id == id)
+                         select new {f.Name, f.Description, f.Price};
+
+            string[][] data = null;
+
+            try
+            {
+                data = new string[result.ToArray().Length][];
+
+                for (int i = 0; i < data.Length; i++)
+                {
+                    var registro = result.ToArray()[i];
+                    string[] registroArr = new string[3];
+
+                    registroArr[0] = registro.Name;
+                    registroArr[1] = registro.Description;
+                    registroArr[2] = registro.Price.ToString();
+
+                    data[i] = registroArr;
+                }
+            }
+
+            catch
+            {
+
+            }
+
+            return data;
+        }
     }
 }
