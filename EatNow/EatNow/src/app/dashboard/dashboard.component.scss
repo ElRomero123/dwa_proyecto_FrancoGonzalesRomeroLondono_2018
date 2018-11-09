@@ -1,0 +1,26 @@
+main
+{
+    #subtitle
+    {
+        font-size: 12px;
+    }
+    #title
+    {
+        font-size: 25px;
+    }
+
+    p
+    {
+        color: white;
+        display: flex;
+        font-family: arial;
+        margin: 5px;
+    }
+
+    background: blueviolet;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px auto;
+    width: 80%;
+    height: 80%;
+}

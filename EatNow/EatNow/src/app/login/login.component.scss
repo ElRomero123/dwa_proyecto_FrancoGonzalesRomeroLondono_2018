@@ -1,0 +1,76 @@
+main
+{
+    #tagState
+    {
+        display: none;
+    }
+    
+    div
+    {
+        button:hover
+        {
+            background: white;
+            color:darkolivegreen;
+        }
+
+        button
+        {
+            transition: 0.15s;
+            background: darkolivegreen;
+            color: white;
+            font-size: 15px;
+            border: 0px;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        p
+        {
+            display: flex;
+            font-size: 12px;
+        }
+
+        input:focus
+        {
+            border: 3px solid darkcyan;
+        }
+
+        input
+        {
+            transition: 0.2s;
+            border: 3px solid gray;
+            font-size: 14px;
+            font-family: arial;
+            padding: 5px;
+            border-radius: 4px;
+            outline: 0px;
+            display: flex;
+        }
+
+        margin: 15px;
+    }
+
+    #subtitle
+    {
+        font-size: 12px;
+    }
+    #title
+    {
+        font-size: 25px;
+    }
+
+    background: gray;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px auto;
+    width: 80%;
+    height: 80%;
+}
+
+p
+{
+    color: white;
+    display: flex;
+    font-family: arial;
+    margin: 5px;
+}
