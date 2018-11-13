@@ -175,7 +175,9 @@
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\eatnow - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eatnow - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\eatnow - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\eatnow - Web Deploy1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

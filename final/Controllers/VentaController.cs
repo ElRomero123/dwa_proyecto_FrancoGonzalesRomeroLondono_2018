@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using O = final.ORM;
 using M = final.Models;
+using System;
 
 namespace final
 {
@@ -12,11 +13,12 @@ namespace final
 
         public string Post(M.Venta entrada)
         {
+            Random N = new Random();
             string result = null;
 
             try
             {
-                entrada.HashVenta = SHA256Encrypt(entrada.IdUser + "" + entrada.IdFood1 + "" + entrada.IdFood2 + "" + entrada.IdFood3);
+                entrada.HashVenta = SHA256Encrypt(SHA256Encrypt(entrada.IdUser + "" + entrada.IdFood1 + "" + entrada.IdFood2 + "" + entrada.IdFood3) + N.Next(1462282825));
                 #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
                 AutoMapper.Mapper.CreateMap<M.Venta, O.Venta>();
                 #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
