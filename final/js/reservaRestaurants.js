@@ -12,7 +12,6 @@ var finish;
 var rId;
 var titulo;
 var hash;
-var centesimas, segundos, minutos;
 
 window.onload = inicializar;
 
@@ -94,7 +93,7 @@ function initEventos()
 
 function cargarRestaurante(btn)
 {
-    titulo.innerHTML = 'Seleccione sus platos. No hay paso atras!';
+    titulo.innerHTML = 'Pida por la carta virtual!';
     rId = btn.id;
     back.style.display = "inline-block";
     finish.style.display = 'none';
@@ -197,7 +196,7 @@ function toMenu()
 
 function enviarOrden()
 {
-    titulo.innerHTML = 'SELECCIONÓ LOS SIGUIENTES PRODUCTOS:';
+    titulo.innerHTML = 'Has seleccionado los siguientes productos:';
     back.style.display = 'none';
     finish.style.display = 'block';
 
@@ -250,41 +249,8 @@ function finalizar()
                 $('#listOptions').empty();
                 finish.style.display = 'none';
                 hash.innerHTML = data;
-                setInterval(cronometro, 10);
+                titulo.innerHTML = 'FELICITACIONES!';
             }
         }
     );
-}
-
-
-function cronometro()
-{
-    if (centesimas < 99)
-    {
-        centesimas++;
-        if (centesimas < 10) { centesimas = "0" + centesimas; }
-    }
-    if (centesimas === 99)
-    {
-        centesimas = -1;
-    }
-    if (centesimas === 0)
-    {
-        segundos++;
-        if (segundos < 10) { segundos = "0" + segundos; }
-        console.log(segundos);
-        //Segundos.innerHTML = ":" + segundos;
-        
-    }
-    if (segundos === 59)
-    {
-        segundos = -1;
-    }
-    if (centesimas === 0 && segundos === 0)
-    {
-        minutos++;
-        if (minutos < 10) { minutos = "0" + minutos }
-        //Minutos.innerHTML = ":" + minutos;
-        console.log(minutos);
-    }
 }
