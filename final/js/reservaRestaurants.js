@@ -12,6 +12,7 @@ var finish;
 var rId;
 var titulo;
 var hash;
+var centesimas, segundos, minutos;
 
 window.onload = inicializar;
 
@@ -246,8 +247,44 @@ function finalizar()
             success:
             function (data)
             {
+                $('#listOptions').empty();
+                finish.style.display = 'none';
                 hash.innerHTML = data;
+                setInterval(cronometro, 10);
             }
         }
     );
+}
+
+
+function cronometro()
+{
+    if (centesimas < 99)
+    {
+        centesimas++;
+        if (centesimas < 10) { centesimas = "0" + centesimas; }
+    }
+    if (centesimas === 99)
+    {
+        centesimas = -1;
+    }
+    if (centesimas === 0)
+    {
+        segundos++;
+        if (segundos < 10) { segundos = "0" + segundos; }
+        console.log(segundos);
+        //Segundos.innerHTML = ":" + segundos;
+        
+    }
+    if (segundos === 59)
+    {
+        segundos = -1;
+    }
+    if (centesimas === 0 && segundos === 0)
+    {
+        minutos++;
+        if (minutos < 10) { minutos = "0" + minutos }
+        //Minutos.innerHTML = ":" + minutos;
+        console.log(minutos);
+    }
 }
