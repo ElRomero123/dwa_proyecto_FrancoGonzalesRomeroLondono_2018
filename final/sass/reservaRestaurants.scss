@@ -2,6 +2,13 @@ body
 {
     #restaurantsCard 
     {
+        #qrcode
+        {
+            width:160px;
+            height:160px;
+            margin-top:15px;
+        }
+
         .tag
         {
             color: black;
