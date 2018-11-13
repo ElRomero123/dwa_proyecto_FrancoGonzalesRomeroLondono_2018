@@ -126,10 +126,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ORM\Food.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
@@ -152,7 +154,13 @@
     <Compile Include="ORM\Restaurant.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
     </Compile>
+    <Compile Include="ORM\sysdiagram.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
+    </Compile>
     <Compile Include="ORM\User.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Venta.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

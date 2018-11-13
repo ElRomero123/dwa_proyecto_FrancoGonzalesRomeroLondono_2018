@@ -3,56 +3,18 @@ using System.Security.Cryptography;
 using System.Text;
 using O = final.ORM;
 using M = final.Models;
-using System.Linq;
 
 namespace final
 {
-    public class UserController : ApiController
+    public class VentaController : ApiController
     {
         private O.BDEatNowEntities BD = new O.BDEatNowEntities();
 
-        public string[] Get(string username, string password)
+        public bool Post(M.Venta entrada)
         {
-            string[] data = new string[5];
+            entrada.HashVenta = SHA256Encrypt(entrada.IdUser + "" + entrada.IdFood1 + "" + entrada.IdFood2 + "" + entrada.IdFood3);
 
-            var result = from u in BD.Users
-                         where (u.Username == username)
-                         select new {u.Id, u.Password, u.Name, u.LastName, u.Phone, u.Avatar};
-
-            try
-            {
-                if (result != null)
-                {
-                    var result1 = result.ToArray()[0];
-
-                    var hash = SHA256Encrypt(password);
-                    if (result1.Password == SHA256Encrypt(password))
-                    {
-                        data[0] = result1.Name;
-                        data[1] = result1.LastName;
-                        data[2] = result1.Phone.ToString();
-                        data[3] = result1.Avatar;
-                        data[4] = result1.Id.ToString();
-                    }
-                }
-            }
-
-            catch
-            {
-                data[0] = "N";
-                data[1] = "N";
-                data[2] = "N";
-                data[3] = "N";
-            }
-          
-            return data;
-        }
-
-        public bool Post(M.User entrada)
-        {
             bool state;
-            string CriptoPassword = SHA256Encrypt(entrada.Password);
-            entrada.Password = CriptoPassword;
 
             try
             {

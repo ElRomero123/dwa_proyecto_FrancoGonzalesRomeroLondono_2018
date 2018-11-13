@@ -30,6 +30,16 @@
           <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IdOwner" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -45,6 +55,19 @@
           <Property Name="Address" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Reputation" Type="int" Nullable="false" />
           <Property Name="Avatar" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BDEatNow.dbo.Venta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="HashVenta" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="IdFood1" Type="int" />
+          <Property Name="IdFood2" Type="int" />
+          <Property Name="IdFood3" Type="int" />
+          <Property Name="HashVenta" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <Association Name="FK_Food_Restaurant">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1">
@@ -77,7 +100,17 @@
         <EntityContainer Name="BDEatNowModelStoreContainer">
           <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Venta" EntityType="Self.Venta" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Venta].[Id] AS [Id], 
+    [Venta].[IdFood1] AS [IdFood1], 
+    [Venta].[IdFood2] AS [IdFood2], 
+    [Venta].[IdFood3] AS [IdFood3], 
+    [Venta].[HashVenta] AS [HashVenta]
+    FROM [dbo].[Venta] AS [Venta]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_Food_Restaurant" Association="Self.FK_Food_Restaurant">
             <End Role="Restaurant" EntitySet="Restaurant" />
             <End Role="Food" EntitySet="Food" />
@@ -120,6 +153,16 @@
           <NavigationProperty Name="Foods" Relationship="Self.FK_Food_Restaurant" FromRole="Restaurant" ToRole="Food" />
           <NavigationProperty Name="User" Relationship="Self.FK_Restaurant_User" FromRole="Restaurant" ToRole="User" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -136,6 +179,17 @@
           <Property Name="Reputation" Type="Int32" Nullable="false" />
           <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Restaurants" Relationship="Self.FK_Restaurant_User" FromRole="User" ToRole="Restaurant" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="HashVenta" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="IdFood1" Type="Int32" />
+          <Property Name="IdFood2" Type="Int32" />
+          <Property Name="IdFood3" Type="Int32" />
+          <Property Name="HashVenta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_Food_Restaurant">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1">
@@ -168,7 +222,9 @@
         <EntityContainer Name="BDEatNowEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Foods" EntityType="Self.Food" />
           <EntitySet Name="Restaurants" EntityType="Self.Restaurant" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Ventas" EntityType="Self.Venta" />
           <AssociationSet Name="FK_Food_Restaurant" Association="Self.FK_Food_Restaurant">
             <End Role="Restaurant" EntitySet="Restaurants" />
             <End Role="Food" EntitySet="Foods" />
@@ -211,6 +267,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BDEatNowModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="BDEatNowModel.User">
               <MappingFragment StoreEntitySet="User">
@@ -225,6 +292,17 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Reputation" ColumnName="Reputation" />
                 <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ventas">
+            <EntityTypeMapping TypeName="BDEatNowModel.Venta">
+              <MappingFragment StoreEntitySet="Venta">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdFood1" ColumnName="IdFood1" />
+                <ScalarProperty Name="IdFood2" ColumnName="IdFood2" />
+                <ScalarProperty Name="IdFood3" ColumnName="IdFood3" />
+                <ScalarProperty Name="HashVenta" ColumnName="HashVenta" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

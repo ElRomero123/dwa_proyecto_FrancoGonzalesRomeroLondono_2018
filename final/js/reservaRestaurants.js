@@ -224,5 +224,28 @@ function enviarOrden()
 
 function finalizar()
 {
+    var venta =
+    {
+        idUser: parseInt(localStorage.getItem('id')),
+        idFood1: parseInt(localStorage.getItem(1)),
+        idFood2: parseInt(localStorage.getItem(2)),
+        idFood3: parseInt(localStorage.getItem(3)),
+        hashVenta: ''
+    };
     
+    $.ajax
+    (
+        {
+            url: '../api/venta',
+            type: 'POST',
+            data: JSON.stringify(venta),
+            contentType: "application/json;charset=utf-8",
+
+            success:
+            function (data)
+            {
+                
+            }
+        }
+    );
 }
