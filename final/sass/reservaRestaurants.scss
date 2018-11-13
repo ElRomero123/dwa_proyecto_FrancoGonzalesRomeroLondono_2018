@@ -2,8 +2,28 @@ body
 {
     #restaurantsCard 
     { 
+        #finish:hover
+        {
+            background: orangered;
+        }
+
+        #finish
+        {
+            transition: 0.15s;
+            background: gray;
+            border: 0px;
+        }
+
+        #ordenar:hover
+        {
+            background: green;
+        }
+
         #ordenar
         {
+            transition: 0.15s;
+            background: gray;
+            border: 0px;
             display: none;
         }
 

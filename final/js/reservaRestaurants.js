@@ -1,13 +1,14 @@
 ﻿const RESTAURANTES = ['<button id="', '" class="restaurants" onclick="cargarRestaurante(this)"> <div> <div>', '</div> <div>', '</div> </div> </button>'];
-const PLATOS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="1" value="', '"> </div> </div>', '<div class="card"> <div id="title">APERITIVOS</div> <form>', '</div> </form>'];
+const PLATOS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="1" value="', '"> </div> </div>', '<div class="card"> <div id="title">PLATOS</div> <form>', '</div> </form>'];
 const APERITIVOS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="2" value="', '"> </div> </div>', '<div class="card"> <div id="title">APERITIVOS</div> <form>', '</div> </form>'];
-const BEBIDAS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="3" value="', '"> </div> </div>', '<div class="card"> <div id="title">APERITIVOS</div> <form>', '</div> </form>'];
+const BEBIDAS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="3" value="', '"> </div> </div>', '<div class="card"> <div id="title">BEBIDAS</div> <form>', '</div> </form>'];
 const ORDEN = ['<div class="card"> <div class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> </div> </div> </div>'];
 
 var nombre, phone, avatar;
 var back, menu;
 var botonId;
 var ordenar;
+var finish;
 var rId;
 var titulo;
 
@@ -37,6 +38,7 @@ function initProfile()
     ordenar = document.getElementById('ordenar');
     back = document.getElementById('back');
     titulo = document.getElementById('titulo');
+    finish = document.getElementById('finish');
 
     back.addEventListener('click', toBack);
     nombre.innerHTML = localStorage.getItem('name');
@@ -47,6 +49,7 @@ function initProfile()
 function initRestaurants()
 {
     back.style.display = "none";
+    finish.style.display = "none";
 
     $.ajax
     (
@@ -88,9 +91,10 @@ function initEventos()
 
 function cargarRestaurante(btn)
 {
-    titulo.text = 'Seleccione sus platos!';
+    titulo.innerHTML = 'Seleccione sus platos. No hay paso atras!';
     rId = btn.id;
     back.style.display = "inline-block";
+    finish.style.display = 'none';
     $('#listOptions').empty();
 
     $.ajax
@@ -178,8 +182,9 @@ function toBack()
 {
     $('#listOptions').empty();
     back.style.display = "none";
+    ordenar.style.display = 'none';
     initRestaurants();
-    titulo.text = 'Seleccione un restaurante';
+    titulo.innerHTML = 'Seleccione un restaurante';
 }
 
 function toMenu()
@@ -189,8 +194,9 @@ function toMenu()
 
 function enviarOrden()
 {
-    titulo.text = 'Acaba de seleccionar los siguientes productos:';
+    titulo.innerHTML = 'SELECCIONÓ LOS SIGUIENTES PRODUCTOS:';
     back.style.display = 'none';
+    finish.style.display = 'block';
 
     localStorage.setItem(1, $('input:radio[name=1]:checked').val());
     localStorage.setItem(2, $('input:radio[name=2]:checked').val());
@@ -214,4 +220,9 @@ function enviarOrden()
             }
         );
     }
+}
+
+function finalizar()
+{
+    
 }
