@@ -14,6 +14,14 @@ namespace final.ORM
     
     public partial class Food
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Food()
+        {
+            this.Ventas = new HashSet<Venta>();
+            this.Ventas1 = new HashSet<Venta>();
+            this.Ventas2 = new HashSet<Venta>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -23,5 +31,11 @@ namespace final.ORM
         public int IdRestaurant { get; set; }
     
         public virtual Restaurant Restaurant { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Ventas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Ventas1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Ventas2 { get; set; }
     }
 }

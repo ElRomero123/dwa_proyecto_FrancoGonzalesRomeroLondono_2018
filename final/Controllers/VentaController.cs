@@ -10,29 +10,28 @@ namespace final
     {
         private O.BDEatNowEntities BD = new O.BDEatNowEntities();
 
-        public bool Post(M.Venta entrada)
+        public string Post(M.Venta entrada)
         {
-            entrada.HashVenta = SHA256Encrypt(entrada.IdUser + "" + entrada.IdFood1 + "" + entrada.IdFood2 + "" + entrada.IdFood3);
-
-            bool state;
+            string result = null;
 
             try
             {
+                entrada.HashVenta = SHA256Encrypt(entrada.IdUser + "" + entrada.IdFood1 + "" + entrada.IdFood2 + "" + entrada.IdFood3);
                 #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
-                AutoMapper.Mapper.CreateMap<M.User, O.User>();
+                AutoMapper.Mapper.CreateMap<M.Venta, O.Venta>();
                 #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
-                O.User BDUser = AutoMapper.Mapper.Map<O.User>(entrada);
-                BD.Users.Add(BDUser);
+                O.Venta BDVenta = AutoMapper.Mapper.Map<O.Venta>(entrada);
+                BD.Ventas.Add(BDVenta);
                 BD.SaveChanges();
-                state = true;
+                result = entrada.HashVenta;
             }
 
             catch
             {
-                state = false;
+                result = null;
             }
             
-            return state; 
+            return result; 
         }
 
         private string SHA256Encrypt(string input)

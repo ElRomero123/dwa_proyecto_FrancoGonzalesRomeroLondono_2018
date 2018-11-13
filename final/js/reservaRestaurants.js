@@ -11,6 +11,7 @@ var ordenar;
 var finish;
 var rId;
 var titulo;
+var hash;
 
 window.onload = inicializar;
 
@@ -39,6 +40,7 @@ function initProfile()
     back = document.getElementById('back');
     titulo = document.getElementById('titulo');
     finish = document.getElementById('finish');
+    hash = document.getElementById('hash');
 
     back.addEventListener('click', toBack);
     nombre.innerHTML = localStorage.getItem('name');
@@ -244,7 +246,7 @@ function finalizar()
             success:
             function (data)
             {
-                
+                hash.innerHTML = data;
             }
         }
     );

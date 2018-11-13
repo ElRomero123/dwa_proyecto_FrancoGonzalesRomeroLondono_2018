@@ -2,6 +2,16 @@ body
 {
     #restaurantsCard 
     { 
+        #hash
+        {
+            color: black;
+            background: white;
+            margin: 10px;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
         #finish:hover
         {
             background: orangered;
