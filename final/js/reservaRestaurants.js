@@ -28,7 +28,9 @@ function initProfile()
     phone = document.getElementById('phone');
     avatar = document.getElementById('avatar'); 
     ordenar = document.getElementById('ordenar');
+    back = document.getElementById('back');
 
+    back.addEventListener('click', toBack);
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
     avatar.style.background = 'url(' + localStorage.getItem('avatar') + ')';
@@ -36,6 +38,8 @@ function initProfile()
 
 function initRestaurants()
 {
+    back.style.display = "none";
+
     $.ajax
     (
         {
@@ -65,13 +69,12 @@ function initRestaurants()
 
 function initVariables()
 {
-    back = document.getElementById('back');
     menu = document.getElementById('menu');
 }
 
 function initEventos()
 {
-    back.addEventListener('click', toBack);
+    
     menu.addEventListener('click', toMenu);
 }
 
