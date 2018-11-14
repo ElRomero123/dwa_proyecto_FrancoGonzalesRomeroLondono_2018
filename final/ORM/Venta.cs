@@ -15,13 +15,10 @@ namespace final.ORM
     public partial class Venta
     {
         public int Id { get; set; }
-        public Nullable<int> IdFood1 { get; set; }
-        public Nullable<int> IdFood2 { get; set; }
-        public Nullable<int> IdFood3 { get; set; }
+        public int IdFood1 { get; set; }
+        public int IdFood2 { get; set; }
+        public int IdFood3 { get; set; }
         public string HashVenta { get; set; }
-    
-        public virtual Food Food { get; set; }
-        public virtual Food Food1 { get; set; }
-        public virtual Food Food2 { get; set; }
+        public bool Received { get; set; }
     }
 }

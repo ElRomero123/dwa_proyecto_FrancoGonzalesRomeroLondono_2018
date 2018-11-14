@@ -61,10 +61,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdFood1" Type="int" />
-          <Property Name="IdFood2" Type="int" />
-          <Property Name="IdFood3" Type="int" />
+          <Property Name="IdFood1" Type="int" Nullable="false" />
+          <Property Name="IdFood2" Type="int" Nullable="false" />
+          <Property Name="IdFood3" Type="int" Nullable="false" />
           <Property Name="HashVenta" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Received" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_Food_Restaurant">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1">
@@ -94,42 +95,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Venta_Food">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Food1">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood2" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Food2">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood3" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="BDEatNowModelStoreContainer">
           <EntitySet Name="Food" EntityType="Self.Food" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restaurant" EntityType="Self.Restaurant" Schema="dbo" store:Type="Tables" />
@@ -143,18 +108,6 @@
           <AssociationSet Name="FK_Restaurant_User" Association="Self.FK_Restaurant_User">
             <End Role="User" EntitySet="User" />
             <End Role="Restaurant" EntitySet="Restaurant" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food" Association="Self.FK_Venta_Food">
-            <End Role="Food" EntitySet="Food" />
-            <End Role="Venta" EntitySet="Venta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food1" Association="Self.FK_Venta_Food1">
-            <End Role="Food" EntitySet="Food" />
-            <End Role="Venta" EntitySet="Venta" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food2" Association="Self.FK_Venta_Food2">
-            <End Role="Food" EntitySet="Food" />
-            <End Role="Venta" EntitySet="Venta" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -174,9 +127,6 @@
           <Property Name="Avatar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdRestaurant" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Restaurant" Relationship="Self.FK_Food_Restaurant" FromRole="Food" ToRole="Restaurant" />
-          <NavigationProperty Name="Ventas" Relationship="Self.FK_Venta_Food" FromRole="Food" ToRole="Venta" />
-          <NavigationProperty Name="Ventas1" Relationship="Self.FK_Venta_Food1" FromRole="Food" ToRole="Venta" />
-          <NavigationProperty Name="Ventas2" Relationship="Self.FK_Venta_Food2" FromRole="Food" ToRole="Venta" />
         </EntityType>
         <EntityType Name="Restaurant">
           <Key>
@@ -225,13 +175,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdFood1" Type="Int32" />
-          <Property Name="IdFood2" Type="Int32" />
-          <Property Name="IdFood3" Type="Int32" />
+          <Property Name="IdFood1" Type="Int32" Nullable="false" />
+          <Property Name="IdFood2" Type="Int32" Nullable="false" />
+          <Property Name="IdFood3" Type="Int32" Nullable="false" />
           <Property Name="HashVenta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Food" Relationship="Self.FK_Venta_Food" FromRole="Venta" ToRole="Food" />
-          <NavigationProperty Name="Food1" Relationship="Self.FK_Venta_Food1" FromRole="Venta" ToRole="Food" />
-          <NavigationProperty Name="Food2" Relationship="Self.FK_Venta_Food2" FromRole="Venta" ToRole="Food" />
+          <Property Name="Received" Type="Boolean" Nullable="false" />
         </EntityType>
         <Association Name="FK_Food_Restaurant">
           <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1">
@@ -244,42 +192,6 @@
             </Principal>
             <Dependent Role="Food">
               <PropertyRef Name="IdRestaurant" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Food">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood1" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Food1">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood2" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Venta_Food2">
-          <End Role="Food" Type="Self.Food" Multiplicity="0..1" />
-          <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Food">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Venta">
-              <PropertyRef Name="IdFood3" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -306,18 +218,6 @@
           <AssociationSet Name="FK_Food_Restaurant" Association="Self.FK_Food_Restaurant">
             <End Role="Restaurant" EntitySet="Restaurants" />
             <End Role="Food" EntitySet="Foods" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food" Association="Self.FK_Venta_Food">
-            <End Role="Food" EntitySet="Foods" />
-            <End Role="Venta" EntitySet="Ventas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food1" Association="Self.FK_Venta_Food1">
-            <End Role="Food" EntitySet="Foods" />
-            <End Role="Venta" EntitySet="Ventas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venta_Food2" Association="Self.FK_Venta_Food2">
-            <End Role="Food" EntitySet="Foods" />
-            <End Role="Venta" EntitySet="Ventas" />
           </AssociationSet>
           <AssociationSet Name="FK_Restaurant_User" Association="Self.FK_Restaurant_User">
             <End Role="User" EntitySet="Users" />
@@ -393,6 +293,7 @@
                 <ScalarProperty Name="IdFood2" ColumnName="IdFood2" />
                 <ScalarProperty Name="IdFood3" ColumnName="IdFood3" />
                 <ScalarProperty Name="HashVenta" ColumnName="HashVenta" />
+                <ScalarProperty Name="Received" ColumnName="Received" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

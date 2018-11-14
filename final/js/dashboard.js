@@ -32,6 +32,7 @@ function initProfile()
 function initVariables()
 {
     reserva = document.getElementById('reserva');
+    administrador = document.getElementById('administrador');
     salir = document.getElementById('salir');
 }
 
@@ -39,6 +40,7 @@ function initEventos()
 {
     reserva.addEventListener('click', reservar);
     salir.addEventListener('click', logout);
+    administrador.addEventListener('click', manage);
 }
 
 function reservar()
@@ -50,4 +52,9 @@ function logout()
 {
     location.href = "index.html";
     localStorage.clear();
+}
+
+function manage()
+{
+    location.href = 'managePage.html';
 }

@@ -4,16 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4aec91cd852a41f38646337cd70cf3c0" Name="Diagram1">
-        <EntityTypeShape EntityType="BDEatNowModel.Food" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+      <Diagram DiagramId="3377a5bf23ad4f3aa54ac93b7edde13f" Name="Diagram1">
+        <EntityTypeShape EntityType="BDEatNowModel.Food" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BDEatNowModel.Restaurant" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BDEatNowModel.sysdiagram" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BDEatNowModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BDEatNowModel.Venta" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDEatNowModel.Venta" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="BDEatNowModel.FK_Food_Restaurant" ManuallyRouted="false" />
-        <AssociationConnector Association="BDEatNowModel.FK_Venta_Food" ManuallyRouted="false" />
-        <AssociationConnector Association="BDEatNowModel.FK_Venta_Food1" ManuallyRouted="false" />
-        <AssociationConnector Association="BDEatNowModel.FK_Venta_Food2" ManuallyRouted="false" />
         <AssociationConnector Association="BDEatNowModel.FK_Restaurant_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
