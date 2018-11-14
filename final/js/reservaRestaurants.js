@@ -1,8 +1,17 @@
-﻿var nombre, phone, avatar;
+﻿const RESTAURANTES = ['<button id="', '" class="restaurants" onclick="cargarRestaurante(this)"> <div> <div>', '</div> <div>', '</div> </div> </button>'];
+const PLATOS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="1" value="', '"> </div> </div>', '<div class="card"> <div id="title">PLATOS</div> <form>', '</div> </form>'];
+const APERITIVOS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="2" value="', '"> </div> </div>', '<div class="card"> <div id="title">APERITIVOS</div> <form>', '</div> </form>'];
+const BEBIDAS = ['<div id="', '" class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> <input type="radio" name="3" value="', '"> </div> </div>', '<div class="card"> <div id="title">BEBIDAS</div> <form>', '</div> </form>'];
+const ORDEN = ['<div class="card"> <div class="foods"> <div> <div> Nombre:', '</div> <div> Descripción:', '</div> <div> Precio: $', '</div> </div> </div> </div>'];
+
+var nombre, phone, avatar;
 var back, menu;
 var botonId;
 var ordenar;
+var finish;
 var rId;
+var titulo;
+var hash;
 
 window.onload = inicializar;
 
@@ -29,6 +38,9 @@ function initProfile()
     avatar = document.getElementById('avatar'); 
     ordenar = document.getElementById('ordenar');
     back = document.getElementById('back');
+    titulo = document.getElementById('titulo');
+    finish = document.getElementById('finish');
+    hash = document.getElementById('hash');
 
     back.addEventListener('click', toBack);
     nombre.innerHTML = localStorage.getItem('name');
@@ -39,6 +51,7 @@ function initProfile()
 function initRestaurants()
 {
     back.style.display = "none";
+    finish.style.display = "none";
 
     $.ajax
     (
@@ -52,7 +65,7 @@ function initRestaurants()
                 var elements = '';
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<button id="' + data[i][0] + '" class="restaurants" onclick="cargarRestaurante(this)"> <div> <div>' + data[i][1] + '</div> <div>' + data[i][3] + '</div> <div>' + data[i][5] + '</div> <div>' + data[i][4] + '</div> </div> </button>';
+                    elements += RESTAURANTES[0] + data[i][0] + RESTAURANTES[1] + data[i][1] + RESTAURANTES[2] + data[i][3] + RESTAURANTES[2] + data[i][5] + RESTAURANTES[2] + data[i][4] + RESTAURANTES[3];
                 }
 
                 $('#listOptions').append(elements);
@@ -80,8 +93,10 @@ function initEventos()
 
 function cargarRestaurante(btn)
 {
+    titulo.innerHTML = 'Pida por la carta virtual!';
     rId = btn.id;
     back.style.display = "inline-block";
+    finish.style.display = 'none';
     $('#listOptions').empty();
 
     $.ajax
@@ -97,10 +112,10 @@ function cargarRestaurante(btn)
   
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div id="' + data[i][0] + '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="2" value="' + data[i][0] + '"> </div> </div>';
+                    elements += APERITIVOS[0] + data[i][0] + APERITIVOS[1] + data[i][1] + APERITIVOS[2] + data[i][2] + APERITIVOS[3] + data[i][3] + APERITIVOS[4] + data[i][0] + APERITIVOS[5];
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">APERITIVOS</div> <form action="1">' + elements + '</div> </form>');
+                $('#listOptions').append(APERITIVOS[6] + elements + APERITIVOS[7]);
 
                 for (i = 0; i < data.length; i++)
                 {
@@ -123,10 +138,10 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div id="' + data[i][0] +  '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="1" value="' + data[i][0] + '"> </div> </div>';
+                    elements += PLATOS[0] + data[i][0] + PLATOS[1] + data[i][1] + PLATOS[2] + data[i][2] + PLATOS[3] + data[i][3] + PLATOS[4] + data[i][0] + PLATOS[5];
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">PLATOS</div> <form action="2">' + elements + '</div> </form>');
+                $('#listOptions').append(PLATOS[6] + elements + PLATOS[7]);
 
                 for (i = 0; i < data.length; i++)
                 {
@@ -149,10 +164,10 @@ function cargarRestaurante(btn)
 
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += '<div id="' + data[i][0] + '" class="foods"> <div> <div> Nombre:' + data[i][1] + '</div> <div> Descripción:' + data[i][2] + '</div> <div> Precio: $' + data[i][3] + '</div> <input type="radio" name="3" value="' + data[i][0] + '"> </div> </div>';
+                    elements += BEBIDAS[0] + data[i][0] + BEBIDAS[1] + data[i][1] + BEBIDAS[2] + data[i][2] + BEBIDAS[3] + data[i][3] + BEBIDAS[4] + data[i][0] + BEBIDAS[5];
                 }
 
-                $('#listOptions').append('<div class="card"> <div id="title">BEBIDAS</div> <form action="3">' + elements + '</div> </form>');
+                $('#listOptions').append(BEBIDAS[6] + elements + BEBIDAS[7]);
 
                 for (i = 0; i < data.length; i++)
                 {
@@ -169,7 +184,9 @@ function toBack()
 {
     $('#listOptions').empty();
     back.style.display = "none";
+    ordenar.style.display = 'none';
     initRestaurants();
+    titulo.innerHTML = 'Seleccione un restaurante';
 }
 
 function toMenu()
@@ -179,15 +196,16 @@ function toMenu()
 
 function enviarOrden()
 {
+    titulo.innerHTML = 'Has seleccionado los siguientes productos:';
+    back.style.display = 'none';
+    finish.style.display = 'block';
+
     localStorage.setItem(1, $('input:radio[name=1]:checked').val());
     localStorage.setItem(2, $('input:radio[name=2]:checked').val());
     localStorage.setItem(3, $('input:radio[name=3]:checked').val());
     $('#listOptions').empty();
     ordenar.style.display = 'none'; 
 
-    var prices = [];
-
-    var elements = '';
     for (var i = 1; i <= 3; i++)
     {
         $.ajax
@@ -199,14 +217,41 @@ function enviarOrden()
                 success:
                 function (data)
                 {
-
-                    elements = '<div class="card"> <div class="foods"> <div> <div> Nombre:' + data[0][0] + '</div> <div> Descripción:' + data[0][1] + '</div> <div> Precio: $' + data[0][2] + '</div> </div> </div> </div>';
-                    prices[i-1] = parseInt(data[0][2]);
-                    $('#listOptions').append(elements);
+                    $('#listOptions').append(ORDEN[0] + data[0][0] + ORDEN[1] + data[0][1] + ORDEN[2] + data[0][2] + ORDEN[3]);
                 }
             }
         );
     }
+}
 
-    $('#listOptions').append('<p>Precio total: ' + (prices[0] + prices[1] + prices[2]) + '</p>');
+function finalizar()
+{
+    var venta =
+    {
+        idUser: parseInt(localStorage.getItem('id')),
+        idFood1: parseInt(localStorage.getItem(1)),
+        idFood2: parseInt(localStorage.getItem(2)),
+        idFood3: parseInt(localStorage.getItem(3)),
+        hashVenta: '',
+        received: false
+    };
+    
+    $.ajax
+    (
+        {
+            url: '../api/venta',
+            type: 'POST',
+            data: JSON.stringify(venta),
+            contentType: "application/json;charset=utf-8",
+
+            success:
+            function (data)
+            {
+                $('#listOptions').empty();
+                finish.style.display = 'none';
+                hash.innerHTML = data;
+                titulo.innerHTML = 'FELICITACIONES!';
+            }
+        }
+    );
 }

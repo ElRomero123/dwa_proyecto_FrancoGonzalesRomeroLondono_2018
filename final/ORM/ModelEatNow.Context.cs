@@ -27,6 +27,8 @@ namespace final.ORM
     
         public virtual DbSet<Food> Foods { get; set; }
         public virtual DbSet<Restaurant> Restaurants { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Venta> Ventas { get; set; }
     }
 }

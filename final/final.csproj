@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\managePage.css" />
     <Content Include="css\dashboard.css" />
     <Content Include="css\index.css" />
     <Content Include="css\register.css" />
@@ -106,6 +107,7 @@
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\register.js" />
+    <Content Include="js\managePage.js" />
     <Content Include="js\reservaRestaurants.js" />
     <Content Include="js\validate.js" />
     <Content Include="ORM\ModelEatNow.Context.tt">
@@ -119,6 +121,7 @@
       <LastGenOutput>ModelEatNow.cs</LastGenOutput>
     </Content>
     <Content Include="register.html" />
+    <Content Include="managePage.html" />
     <Content Include="reservaRestaurants.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -126,10 +129,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\FoodController.cs" />
+    <Compile Include="Controllers\VentaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ORM\Food.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
@@ -152,7 +157,13 @@
     <Compile Include="ORM\Restaurant.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
     </Compile>
+    <Compile Include="ORM\sysdiagram.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
+    </Compile>
     <Compile Include="ORM\User.cs">
+      <DependentUpon>ModelEatNow.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\Venta.cs">
       <DependentUpon>ModelEatNow.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,7 +178,9 @@
     </Content>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\eatnow - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\eatnow - FTP1.pubxml" />
     <None Include="Properties\PublishProfiles\eatnow - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\eatnow - Web Deploy1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

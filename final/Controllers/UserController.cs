@@ -13,11 +13,11 @@ namespace final
 
         public string[] Get(string username, string password)
         {
-            string[] data = new string[4];
+            string[] data = new string[5];
 
             var result = from u in BD.Users
                          where (u.Username == username)
-                         select new { u.Password, u.Name, u.LastName, u.Phone, u.Avatar};
+                         select new {u.Id, u.Password, u.Name, u.LastName, u.Phone, u.Avatar};
 
             try
             {
@@ -32,6 +32,7 @@ namespace final
                         data[1] = result1.LastName;
                         data[2] = result1.Phone.ToString();
                         data[3] = result1.Avatar;
+                        data[4] = result1.Id.ToString();
                     }
                 }
             }
