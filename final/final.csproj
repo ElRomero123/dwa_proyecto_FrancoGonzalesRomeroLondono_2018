@@ -91,6 +91,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\managePage.css" />
     <Content Include="css\dashboard.css" />
     <Content Include="css\index.css" />
     <Content Include="css\register.css" />
@@ -106,6 +107,7 @@
     <Content Include="index.html" />
     <Content Include="js\dashboard.js" />
     <Content Include="js\register.js" />
+    <Content Include="js\managePage.js" />
     <Content Include="js\reservaRestaurants.js" />
     <Content Include="js\validate.js" />
     <Content Include="ORM\ModelEatNow.Context.tt">

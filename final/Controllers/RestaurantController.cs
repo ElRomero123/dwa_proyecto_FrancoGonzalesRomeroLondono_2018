@@ -44,5 +44,38 @@ namespace final
             
             return data;
         }
+
+        public string[][] Get(int idOwner)
+        {
+            var result = from r in BD.Restaurants
+                         where (r.IdOwner == idOwner)
+                         select new {r.Id, r.Name, r.Background};
+
+            string[][] data = null;
+
+            try
+            {
+                data = new string[result.ToArray().Length][];
+
+                for (int i = 0; i < data.Length; i++)
+                {
+                    var registro = result.ToArray()[i];
+                    string[] registroArr = new string[3];
+
+                    registroArr[0] = registro.Id.ToString();
+                    registroArr[1] = registro.Name; 
+                    registroArr[2] = registro.Background;
+
+                    data[i] = registroArr;
+                }
+            }
+
+            catch
+            {
+
+            }
+
+            return data;
+        }
     }
 }

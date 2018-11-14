@@ -18,6 +18,7 @@ namespace final.ORM
         public Restaurant()
         {
             this.Foods = new HashSet<Food>();
+            this.Ventas = new HashSet<Venta>();
         }
     
         public int Id { get; set; }
@@ -32,5 +33,7 @@ namespace final.ORM
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Food> Foods { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Venta> Ventas { get; set; }
     }
 }

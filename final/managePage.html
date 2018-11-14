@@ -1,45 +1,39 @@
 ﻿<!doctype html>
-    <html lang="en">
+<html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/reservaRestaurants.css">
-        <title>Lista de restaurantes!</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/managePage.css">
+    <title>Lista de restaurantes!</title>
+</head>
 
-    <body>
-        <header>
+<body>
+    <header>
 
-            <div id="texto">Restaurantes!</div>
+        <div id="texto">Restaurantes!</div>
 
-            <div id="infoUser">
-                <div id="avatar"></div>
-                <div id="completeName"></div>
-                <div id="phone"></div>
-            </div>
-
-        </header>
-
-        <div id="restaurantsCard">
-            <div id="titulo">Seleccione un restaurante</div>
-
-            <div id="navOpciones">
-                <button id="back" class="nav"></button>
-                <button id="menu" class="nav"></button>
-            </div>
-
-            <div id="listOptions"></div>
-
-            <button id='ordenar' onclick="enviarOrden()">Ordenar</button>
-            <button id='finish' onclick="finalizar()">Finalizar la compra</button>
-            <div class='tag'>Usando este código, reclamas el producto!</div>
-
-            <div id='hash' class='tag'></div>
-
+        <div id="infoUser">
+            <div id="avatar"></div>
+            <div id="completeName"></div>
+            <div id="phone"></div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="js/reservaRestaurants.js"></script>
-    </body>
+    </header>
+
+    <div id="restaurantsCard">
+        <div id="titulo">Restaurantes a su cargo</div>
+
+        <div id="navOpciones">
+            <button id="menu" class="nav"></button>
+        </div>
+
+        <div id="listOptions"></div>
+
+        <div id='foodOrders'></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/managePage.js"></script>
+</body>
 </html>

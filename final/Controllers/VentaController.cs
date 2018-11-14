@@ -4,6 +4,7 @@ using System.Text;
 using O = final.ORM;
 using M = final.Models;
 using System;
+using System.Linq;
 
 namespace final
 {
@@ -34,6 +35,34 @@ namespace final
             }
             
             return result; 
+        }
+
+        public string[][] Get(int idRestaurant)
+        {
+            var result = from v in BD.Ventas
+                         where (v.IdRestaurant == idRestaurant)
+                         select new {v.HashVenta, v.IdFood1, v.IdFood2, v.IdFood3};
+
+            string[][] data = null;
+
+            //
+            data = new string[result.ToArray().Length][];
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                var registro = result.ToArray()[i];
+                string[] registroArr = new string[4];
+
+                registroArr[0] = registro.HashVenta;
+                registroArr[1] = registro.IdFood1.ToString();
+                registroArr[2] = registro.IdFood2.ToString();
+                registroArr[3] = registro.IdFood3.ToString();
+
+                data[i] = registroArr;
+            }
+            //
+
+            return data;
         }
 
         private string SHA256Encrypt(string input)
