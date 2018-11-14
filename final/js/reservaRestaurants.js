@@ -233,7 +233,8 @@ function finalizar()
         idFood2: parseInt(localStorage.getItem(2)),
         idFood3: parseInt(localStorage.getItem(3)),
         hashVenta: '',
-        received: false
+        received: false,
+        idRestaurant: rId
     };
     
     $.ajax

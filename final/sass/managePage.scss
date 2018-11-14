@@ -4,6 +4,47 @@ body
     {
         #listOptions
         {
+            .orderItem:hover
+            {
+                background-color: orangered;
+            }
+
+            .orderItem
+            {
+                .preparar:hover
+                {
+                    background-color: orangered;
+                }
+
+                .preparar
+                {
+                    transition: 0.15s;
+                    background-color: red;
+                }
+
+                div
+                {  
+                    div
+                    {
+                        margin: 5px;
+                        color: white;
+                        font-size: 12px;
+                        font-family: arial;
+                        display: flex;
+                    }
+        
+                    margin: auto;
+                }
+
+                width: 100px;
+                padding: 20px;
+                transition: 0.15s;
+                background-color: darkorchid;
+                border: 0px solid black;
+                border-radius: 5px;
+                display: inline-block;
+            }
+
             .restaurants:hover
             {
                 border: 4px solid brown;

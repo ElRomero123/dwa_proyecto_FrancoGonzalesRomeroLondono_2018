@@ -75,14 +75,14 @@ function configRestaurant(id)
             success:
             function (data)
             {
-                //var elements = '';
+                var elements = '';
                 for (var i = 0; i < data.length; i++)
                 {
-                    alert(data[i][0] + " " + data[i][1] + " " + data[i][2] + " " + data[i][3] + " " + data[i][4]);
-                    //elements += RESTAURANTES[0] + data[i][0] + RESTAURANTES[1] + RESTAURANTES[2] + data[i][0] + RESTAURANTES[3] + RESTAURANTES[4] + data[i][1] + RESTAURANTES[5] + RESTAURANTES[6];
+                    //alert(data[i][0] + " " + data[i][1] + " " + data[i][2] + " " + data[i][3]);
+                    elements += "<button class='orderItem'> <div> <div>Precio</div> <div>" + data[i][0] + "</div> <div>" + data[i][1] + "</div> <div>" + data[i][2] + "</div> <div>" + data[i][3] + "</div> </div> </button>";
                 }
 
-                //$('#listOptions').append(elements);
+                $('#listOptions').append(elements);
             }
         }
     );

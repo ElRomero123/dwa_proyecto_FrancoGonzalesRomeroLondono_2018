@@ -45,7 +45,6 @@ namespace final
 
             string[][] data = null;
 
-            //
             data = new string[result.ToArray().Length][];
 
             for (int i = 0; i < data.Length; i++)
@@ -60,8 +59,7 @@ namespace final
 
                 data[i] = registroArr;
             }
-            //
-
+          
             return data;
         }
 
