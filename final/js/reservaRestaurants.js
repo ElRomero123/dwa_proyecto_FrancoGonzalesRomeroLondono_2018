@@ -277,6 +277,4 @@ function consultarEstado()
         stateWait.style.background = 'darkgray';
         clearInterval(intervalo);
     }
-
-    console.log(result);
 }

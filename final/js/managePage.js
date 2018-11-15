@@ -2,6 +2,7 @@
 
 var nombre, phone, avatar;
 var titulo, menu;
+var btnNewRestaurante, btnNewFood;
 
 window.onload = inicializar;
 
@@ -26,6 +27,9 @@ function initProfile()
     avatar = document.getElementById('avatar'); 
     titulo = document.getElementById('titulo');
     menu = document.getElementById('menu');
+    btnNewRestaurante = document.getElementById('btnNewRestaurante');
+    btnNewFood = document.getElementById('btnNewFood');
+
     
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
@@ -63,6 +67,8 @@ function toMenu()
 
 function configRestaurant(id)
 {
+    btnNewFood.style.visibility = 'visible';
+    btnNewRestaurante.style.visibility = 'hidden';
     titulo.innerHTML = 'Lista de ordenes!';
     localStorage.setItem('idR', id);
     $('#listOptions').empty();
@@ -129,4 +135,14 @@ function received(id)
             }
         }
     );
+}
+
+function toNewRestaurant()
+{
+    alert("Nuevo restaurante Funciona!");
+}
+
+function toNewFood()
+{
+    alert("Nuevo plato también funciona!");
 }

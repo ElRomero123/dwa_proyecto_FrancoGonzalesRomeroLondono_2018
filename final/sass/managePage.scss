@@ -2,6 +2,29 @@ body
 {
     #restaurantsCard 
     {
+        #btnNewFood
+        {
+            visibility: hidden;
+        }
+
+        .btnOpciones:hover
+        {
+            color: green;
+            background: white;
+        }
+
+        .btnOpciones
+        {
+            transition: 0.15s;
+            color: white;
+            background: green;
+            border-radius: 5px;
+            border: 0px;  
+            display: inline-block;
+            padding: 10px;  
+            margin: 10px; 
+        }
+
         #foodOrders
         {
             .orderItem
