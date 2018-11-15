@@ -246,7 +246,7 @@ function finalizar()
                 hash.innerHTML = data;
 
                 stateWait.style.visibility = 'visible';
-                stateWait.style.background = 'red';
+                stateWait.style.background = 'darkred';
                 stateStarted.style.visibility = 'visible';
                 stateFinish.style.visibility = 'visible';
                 intervalo = setInterval(consultarEstado, 5000);
@@ -273,7 +273,7 @@ function consultarEstado()
 
     if (result)
     {
-        stateStarted.style.background = 'orangered';
+        stateStarted.style.background = 'orange';
         stateWait.style.background = 'darkgray';
         clearInterval(intervalo);
     }
