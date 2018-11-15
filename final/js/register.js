@@ -1,5 +1,5 @@
 ﻿var register;
-var username, password, passwordAgain, nombre, lastName, numDocument, phone, address;
+var username, password, passwordAgain, nombre, lastName, numDocument, phone, address, avatar;
 
 window.onload = inicializar;
 
@@ -19,6 +19,7 @@ function initVariables()
     numDocument = document.getElementById('numDocument');
     phone = document.getElementById('phone');
     address = document.getElementById('address');
+    avatar = document.getElementById('avatar');
     register = document.getElementById('register');
 }
 
@@ -47,7 +48,8 @@ function registrar()
                 numDocument: numDocument.value,
                 phone: phone.value,
                 address: address.value,
-                reputation: 10
+                reputation: 10,
+                avatar: avatar.value
             };
 
 

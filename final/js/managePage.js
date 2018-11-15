@@ -42,7 +42,7 @@ function initRestaurants()
     $.ajax
     (
         {
-            url: '../api/restaurant?idOwner=' + localStorage.getItem('id'),
+            url: '../api/restaurant?idOwner=' + localStorage.getItem('idUser'),
             type: 'GET',
             contentType: "application/json;charset=utf-8",
             success:
@@ -70,14 +70,13 @@ function configRestaurant(id)
     btnNewFood.style.visibility = 'visible';
     btnNewRestaurante.style.visibility = 'hidden';
     titulo.innerHTML = 'Lista de ordenes!';
-    localStorage.setItem('idR', id);
     $('#listOptions').empty();
     $('#foodOrders').empty();
 
     $.ajax
     (
         {
-            url: '../api/venta?idRestaurant=' + localStorage.getItem('idR'),
+            url: '../api/venta?idRestaurant=' + id,
             type: 'GET',
             contentType: "application/json;charset=utf-8",
             success:
@@ -139,7 +138,7 @@ function received(id)
 
 function toNewRestaurant()
 {
-    alert("Nuevo restaurante Funciona!");
+    location.href = 'manageRestaurant.html';
 }
 
 function toNewFood()

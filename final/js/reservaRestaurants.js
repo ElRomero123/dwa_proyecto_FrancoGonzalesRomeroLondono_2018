@@ -31,6 +31,7 @@ function initProfile()
     nombre = document.getElementById('completeName');
     phone = document.getElementById('phone');
     avatar = document.getElementById('avatar'); 
+
     back = document.getElementById('back');
     menu = document.getElementById('menu');
 
@@ -219,7 +220,7 @@ function finalizar()
 {
     var venta =
     {
-        idUser: parseInt(localStorage.getItem('id')),
+        idUser: parseInt(localStorage.getItem('idUser')),
         idFood1: parseInt(localStorage.getItem(1)),
         idFood2: parseInt(localStorage.getItem(2)),
         idFood3: parseInt(localStorage.getItem(3)),

@@ -1,7 +1,5 @@
-var send;
-var register;
-var username;
-var password;
+var username, password;
+var send, register;
 var state;
 
 window.onload = inicializar;
@@ -14,10 +12,10 @@ function inicializar()
 
 function initVariables()
 {
-    send = document.getElementById('send');
-    register = document.getElementById('register');
     username = document.getElementById('username');
     password = document.getElementById('password');
+    send = document.getElementById('send');
+    register = document.getElementById('register');
     state = document.getElementById('state');
 }
 
@@ -53,7 +51,7 @@ function login()
                     localStorage.setItem('name', data[0] + " " + data[1]);
                     localStorage.setItem('phone', data[2]);
                     localStorage.setItem('avatar', data[3]);
-                    localStorage.setItem('id', data[4]);
+                    localStorage.setItem('idUser', data[4]);
                     location.href = "../dashboard.html";
                 }
             }

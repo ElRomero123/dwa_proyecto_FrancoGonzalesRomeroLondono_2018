@@ -1,5 +1,5 @@
-var nombre,phone,avatar;
-var reserva, creacionGrupo, salir;
+var nombre, phone, avatar;
+var reserva, creacionGrupo, administrador, salir;
 
 window.onload = inicializar;
 
@@ -32,29 +32,15 @@ function initProfile()
 function initVariables()
 {
     reserva = document.getElementById('reserva');
+    creacionGrupo = document.getElementById('creacionGrupo');
     administrador = document.getElementById('administrador');
     salir = document.getElementById('salir');
 }
 
 function initEventos()
 {
-    reserva.addEventListener('click', reservar);
-    salir.addEventListener('click', logout);
-    administrador.addEventListener('click', manage);
-}
-
-function reservar()
-{
-    location.href = "reservaRestaurants.html";
-}
-
-function logout()
-{
-    location.href = "index.html";
-    localStorage.clear();
-}
-
-function manage()
-{
-    location.href = 'managePage.html';
+    reserva.addEventListener('click', function () { location.href = "reservaRestaurants.html"; });
+    creacionGrupo.addEventListener('click', function () { location.href = "creacionGrupo.html"; });
+    salir.addEventListener('click', function () { location.href = "index.html"; localStorage.clear(); });
+    administrador.addEventListener('click', function () { location.href = 'managePage.html'; });
 }
