@@ -154,6 +154,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Restaurante.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\User.cs" />

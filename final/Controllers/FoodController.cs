@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using O = final.ORM;
+using M = final.Models;
 using System.Linq;
 
 namespace final
@@ -76,5 +77,28 @@ namespace final
             return data;
         }
 
+        public bool Post(M.Food entrada)
+        {
+            bool result;
+
+            try
+            {
+                #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
+                AutoMapper.Mapper.CreateMap<M.Food, O.Food>();
+                #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
+                O.Food BDFood = AutoMapper.Mapper.Map<O.Food>(entrada);
+                BD.Foods.Add(BDFood);
+                BD.SaveChanges();
+
+                result = true;
+            }
+
+            catch
+            {
+                result = false;
+            }
+
+            return result;
+        }
     }
 }

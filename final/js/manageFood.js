@@ -20,12 +20,12 @@ function inicializar()
 function initVariables()
 {
     name = document.getElementById('name');
-    background = document.getElementById('background');
-    city = document.getElementById('city');
-    address = document.getElementById('address');
-    phone = document.getElementById('phone');
+    description = document.getElementById('description');
+    price = document.getElementById('price');
+    kind = document.getElementById('kind');
     avatar = document.getElementById('avatar');
-    state = document.getElementById('state');
+
+    register = document.getElementById('register');
 }
 
 function initEventos()
@@ -37,25 +37,24 @@ function registrar()
 {
     state.style.visibility = "visible";
     state.style.background = "orangered";
-    state.innerHTML = "Estamos creando el restaurante...";
+    state.innerHTML = "Estamos creando el plato...";
 
-    var restaurante =
+    var food =
     {
         name: name.value,
-        background: background.value,
-        city: city.value,
-        address: address.value,
-        phone: phone.value,
+        description: description.value,
+        price: price.value,
+        kind: kind.value,
         avatar: avatar.value,
-        idOwner: localStorage.getItem('idUser')
+        idRestaurant: localStorage.getItem('idR')
     };
 
     $.ajax
     (
         {
-            url: '../api/restaurant',
+            url: '../api/food',
             type: 'POST',
-            data: JSON.stringify(restaurante),
+            data: JSON.stringify(food),
             contentType: "application/json;charset=utf-8",
             success:
             function (data)
@@ -68,7 +67,7 @@ function registrar()
                 else
                 {
                      state.style.background = "red";
-                     state.innerHTML = "No se pudo agregar su restaurante!";
+                     state.innerHTML = "No se pudo agregar su plato!";
                 }
             }
         }

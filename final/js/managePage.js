@@ -67,6 +67,7 @@ function toMenu()
 
 function configRestaurant(id)
 {
+    localStorage.setItem('idR', id);
     btnNewFood.style.visibility = 'visible';
     btnNewRestaurante.style.visibility = 'hidden';
     titulo.innerHTML = 'Lista de ordenes!';
@@ -76,7 +77,7 @@ function configRestaurant(id)
     $.ajax
     (
         {
-            url: '../api/venta?idRestaurant=' + id,
+            url: '../api/venta?idRestaurant=' + localStorage.getItem('idR'),
             type: 'GET',
             contentType: "application/json;charset=utf-8",
             success:
@@ -143,5 +144,5 @@ function toNewRestaurant()
 
 function toNewFood()
 {
-    alert("Nuevo plato también funciona!");
+    location.href = 'manageFood.html';
 }
