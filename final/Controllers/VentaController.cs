@@ -37,14 +37,25 @@ namespace final
             return result; 
         }
 
-        public bool Post(int idPedido)
+        public bool Post(int idPedido, int orden)
         {
             bool result;
             try
             {
-                O.Venta venta = BD.Ventas.FirstOrDefault(x => x.Id == idPedido);
-                venta.Received = true;
-                BD.SaveChanges();
+                if(orden == 1)
+                {
+                    O.Venta venta = BD.Ventas.FirstOrDefault(x => x.Id == idPedido);
+                    venta.Start = true;
+                    BD.SaveChanges();    
+                }
+
+                else
+                {
+                    O.Venta venta = BD.Ventas.FirstOrDefault(x => x.Id == idPedido);
+                    venta.Received = true;
+                    BD.SaveChanges();
+                }
+
                 result = true;
             }
 
@@ -81,6 +92,15 @@ namespace final
             }
           
             return data;
+        }
+
+        public bool Get(string hashVenta)
+        {
+            var result = from v in BD.Ventas
+                         where (v.HashVenta == hashVenta)
+                         select new  { v.Start };
+
+            return result.ToArray()[0].Start;
         }
 
         private string SHA256Encrypt(string input)

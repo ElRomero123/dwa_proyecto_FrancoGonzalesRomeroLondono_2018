@@ -7,6 +7,8 @@ const ORDEN = ['<div class="card"> <div class="foods"> <div> <div> Nombre:', '</
 var nombre, phone, avatar;
 var back, menu;
 var titulo, ordenar, finish, hash;
+var interval, result = false;
+var stateWait, stateStarted, stateFinish;
 
 window.onload = inicializar;
 
@@ -36,6 +38,10 @@ function initProfile()
     ordenar = document.getElementById('ordenar');
     finish = document.getElementById('finish');
     hash = document.getElementById('hash');
+
+    stateWait = document.getElementById('stateWait');
+    stateStarted = document.getElementById('stateStarted');
+    stateFinish = document.getElementById('stateFinish');
 
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
@@ -219,6 +225,7 @@ function finalizar()
         idFood3: parseInt(localStorage.getItem(3)),
         hashVenta: '',
         received: false,
+        start: false,
         idRestaurant: rId
     };
     
@@ -237,7 +244,39 @@ function finalizar()
                 finish.style.display = 'none';
                 titulo.innerHTML = 'FELICITACIONES!';
                 hash.innerHTML = data;
+
+                stateWait.style.visibility = 'visible';
+                stateWait.style.background = 'red';
+                stateStarted.style.visibility = 'visible';
+                stateFinish.style.visibility = 'visible';
+                intervalo = setInterval(consultarEstado, 5000);
             }
         }
     );
+}
+
+function consultarEstado()
+{
+    $.ajax
+    (
+        {
+            url: '../api/venta?hashVenta=' + hash.innerHTML,
+            type: 'GET',
+            contentType: "application/json;charset=utf-8",
+            success:
+            function (data)
+            {
+                result = data;
+            }
+        }
+    );
+
+    if (result)
+    {
+        stateStarted.style.background = 'orangered';
+        stateWait.style.background = 'darkgray';
+        clearInterval(intervalo);
+    }
+
+    console.log(result);
 }

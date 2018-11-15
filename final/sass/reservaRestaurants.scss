@@ -2,11 +2,16 @@ body
 {
     #restaurantsCard 
     {
-        #qrcode
+        .stateTag
         {
-            width:160px;
-            height:160px;
-            margin-top:15px;
+            display: inline-block;
+            color: white;
+            background-color: darkgrey;
+            font-size: 12px;
+            font-family: arial;
+            padding: 20px;
+            margin: 5px;
+            visibility: hidden;
         }
 
         .tag

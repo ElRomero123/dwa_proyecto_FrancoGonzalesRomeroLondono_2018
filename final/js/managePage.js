@@ -91,7 +91,23 @@ function configRestaurant(id)
 
 function start(id)
 {
-    alert("Inicio el pedido: " + id);
+    $.ajax
+    (
+        {
+            url: '../api/venta?idPedido=' + id + '&orden=' + 1,
+            type: 'POST',
+            contentType: "application/json;charset=utf-8",
+
+            success:
+            function (data)
+            {
+                if (data)
+                {
+                    document.getElementById(id).style.background = 'green';
+                }
+            }
+        }
+    );
 }
 
 function received(id)
@@ -99,8 +115,8 @@ function received(id)
     $.ajax
     (
         {
-            url: '../api/venta?idPedido=' + id,
-            type: 'POST',
+            url: '../api/venta?idPedido=' + id + '&orden=' + 2,
+            type: 'GET',
             contentType: "application/json;charset=utf-8",
 
             success:

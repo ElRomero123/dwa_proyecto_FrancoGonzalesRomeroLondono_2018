@@ -8,6 +8,7 @@
         public int IdFood3 { get; set; }
         public string HashVenta { get; set; }
         public bool Received { get; set; }
+        public bool Start { get; set; }
         public int IdRestaurant { get; set; }
     }
 }
