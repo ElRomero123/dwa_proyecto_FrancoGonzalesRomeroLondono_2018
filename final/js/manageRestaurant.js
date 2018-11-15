@@ -26,6 +26,7 @@ function initVariables()
     phone = document.getElementById('phone');
     avatar = document.getElementById('avatar');
     state = document.getElementById('state');
+    register = document.getElementById('register');
 }
 
 function initEventos()
