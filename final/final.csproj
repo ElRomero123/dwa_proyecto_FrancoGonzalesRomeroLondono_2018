@@ -114,6 +114,7 @@
     <Content Include="img\fondo.jpg" />
     <Content Include="img\group.png" />
     <Content Include="img\logout.png" />
+    <Content Include="img\manager.png" />
     <Content Include="img\menu.png" />
     <Content Include="img\reserva.png" />
     <Content Include="index.html" />
