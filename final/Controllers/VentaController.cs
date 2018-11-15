@@ -37,11 +37,30 @@ namespace final
             return result; 
         }
 
+        public bool Post(int idPedido)
+        {
+            bool result;
+            try
+            {
+                O.Venta venta = BD.Ventas.FirstOrDefault(x => x.Id == idPedido);
+                venta.Received = true;
+                BD.SaveChanges();
+                result = true;
+            }
+
+            catch
+            {
+                result = false;
+            }
+            
+            return result;
+        }
+
         public string[][] Get(int idRestaurant)
         {
             var result = from v in BD.Ventas
                          where (v.IdRestaurant == idRestaurant)
-                         select new {v.HashVenta, v.IdFood1, v.IdFood2, v.IdFood3};
+                         select new {v.Id, v.HashVenta, v.IdFood1, v.IdFood2, v.IdFood3};
 
             string[][] data = null;
 
@@ -50,12 +69,13 @@ namespace final
             for (int i = 0; i < data.Length; i++)
             {
                 var registro = result.ToArray()[i];
-                string[] registroArr = new string[4];
+                string[] registroArr = new string[5];
 
-                registroArr[0] = registro.HashVenta;
-                registroArr[1] = registro.IdFood1.ToString();
-                registroArr[2] = registro.IdFood2.ToString();
-                registroArr[3] = registro.IdFood3.ToString();
+                registroArr[0] = registro.Id.ToString();
+                registroArr[1] = registro.HashVenta;
+                registroArr[2] = registro.IdFood1.ToString();
+                registroArr[3] = registro.IdFood2.ToString();
+                registroArr[4] = registro.IdFood3.ToString();
 
                 data[i] = registroArr;
             }

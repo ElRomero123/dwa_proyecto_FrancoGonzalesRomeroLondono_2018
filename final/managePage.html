@@ -1,52 +1,40 @@
 ﻿<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/managePage.css">
+        <title>Sección de administrador!</title>
+    </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/managePage.css">
-    <title>Lista de restaurantes!</title>
-</head>
+    <body>
+        <header>
 
-<body>
-    <header>
+            <div id="texto">Ventana de administrador!</div>
 
-        <div id="texto">Restaurantes!</div>
+            <div id="infoUser">
+                <div id="avatar"></div>
+                <div id="completeName"></div>
+                <div id="phone"></div>
+            </div>
 
-        <div id="infoUser">
-            <div id="avatar"></div>
-            <div id="completeName"></div>
-            <div id="phone"></div>
+        </header>
+
+        <div id="restaurantsCard">
+            <div id="titulo">Sus restaurantes!</div>
+
+            <div id="navOpciones">
+                <button id="menu" class="nav"></button>
+            </div>
+
+            <div id="listOptions">
+            </div>
+
+            <div id='foodOrders'>
+            </div>
         </div>
 
-    </header>
-
-    <div id="restaurantsCard">
-        <div id="titulo">Restaurantes a su cargo</div>
-
-        <div id="navOpciones">
-            <button id="menu" class="nav"></button>
-        </div>
-
-        <div id="listOptions">
-            <button class='orderItem'>
-                <div>
-                    <div>Precio</div>
-                    <div>Hash</div>
-                    <div>Aperitivo</div>
-                    <div>Bebida</div>
-                    <div>Comida</div>
-                </div>
-
-                <button class='preparar'>Ordenar</button>
-
-            </button>
-        </div>
-
-        <div id='foodOrders'></div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/managePage.js"></script>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/managePage.js"></script>
+    </body>
 </html>

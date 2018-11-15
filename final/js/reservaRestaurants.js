@@ -6,12 +6,7 @@ const ORDEN = ['<div class="card"> <div class="foods"> <div> <div> Nombre:', '</
 
 var nombre, phone, avatar;
 var back, menu;
-var botonId;
-var ordenar;
-var finish;
-var rId;
-var titulo;
-var hash;
+var titulo, ordenar, finish, hash;
 
 window.onload = inicializar;
 
@@ -21,8 +16,6 @@ function inicializar()
     {
         initProfile();
         initRestaurants();
-        initVariables();
-        initEventos();
     }
 
     else
@@ -36,16 +29,19 @@ function initProfile()
     nombre = document.getElementById('completeName');
     phone = document.getElementById('phone');
     avatar = document.getElementById('avatar'); 
-    ordenar = document.getElementById('ordenar');
     back = document.getElementById('back');
+    menu = document.getElementById('menu');
+
     titulo = document.getElementById('titulo');
+    ordenar = document.getElementById('ordenar');
     finish = document.getElementById('finish');
     hash = document.getElementById('hash');
 
-    back.addEventListener('click', toBack);
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
     avatar.style.background = 'url(' + localStorage.getItem('avatar') + ')';
+    back.addEventListener('click', toBack);
+    menu.addEventListener('click', toMenu);
 }
 
 function initRestaurants()
@@ -78,17 +74,6 @@ function initRestaurants()
             }
         }
     );
-}
-
-function initVariables()
-{
-    menu = document.getElementById('menu');
-}
-
-function initEventos()
-{
-    
-    menu.addEventListener('click', toMenu);
 }
 
 function cargarRestaurante(btn)
@@ -250,8 +235,8 @@ function finalizar()
             {
                 $('#listOptions').empty();
                 finish.style.display = 'none';
-                hash.innerHTML = data;
                 titulo.innerHTML = 'FELICITACIONES!';
+                hash.innerHTML = data;
             }
         }
     );

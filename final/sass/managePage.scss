@@ -2,28 +2,36 @@ body
 {
     #restaurantsCard 
     {
-        #listOptions
+        #foodOrders
         {
-            .orderItem:hover
-            {
-                background-color: orangered;
-            }
-
             .orderItem
             {
-                .preparar:hover
-                {
-                    background-color: orangered;
-                }
-
-                .preparar
-                {
-                    transition: 0.15s;
-                    background-color: red;
-                }
-
                 div
                 {  
+
+                    button:hover
+                    {
+                        background-color: orangered;
+                    }
+
+                    button
+                    {
+                        transition: 0.15s;
+                        outline: 0px;
+                        color: white;
+                        background-color: red;
+                        padding: 10px;
+                        border-radius: 5px;
+                        border: 0px;
+                        margin: 5px;
+                        display: flex;
+                    }
+
+                    .hash
+                    {
+                        font-size: 8px;
+                    }
+
                     div
                     {
                         margin: 5px;
@@ -36,15 +44,18 @@ body
                     margin: auto;
                 }
 
-                width: 100px;
-                padding: 20px;
-                transition: 0.15s;
                 background-color: darkorchid;
                 border: 0px solid black;
-                border-radius: 5px;
+                margin: 2px;
+                padding: 2px;
                 display: inline-block;
             }
 
+            margin: 5px;
+        }
+
+        #listOptions
+        {
             .restaurants:hover
             {
                 border: 4px solid brown;
@@ -74,13 +85,13 @@ body
                 display: flex;
                 outline: 0px;
                 border: 0px;
-                margin: 5px;
-                border-radius: 5px;
+                margin: 1px;
                 width: 200px;
                 height: 200px;
             }
 
-            margin: 20px;
+            margin-top: 10px;
+            margin-left: 20px;
         }
                 
         #navOpciones
@@ -103,8 +114,8 @@ body
                 height: 30px;
             }
 
-            margin-top: 5px;
-            margin-left: 25px;
+            margin-top: 10px;
+            margin-left: 20px;
         }
     
         #titulo 
@@ -113,14 +124,14 @@ body
             color: white;
             font-size: 20px;
             vertical-align: middle;
-            margin-top: 5px;
-            margin-left: 25px;  
+            margin-top: 10px;
+            margin-left: 25px;
         }
 
         border-radius: 10px;
         background-color: gray; 
-        padding: 10px;
-        width: 90%;
+        padding: 2px;
+        width: 100%;
         height: auto + 10px;
         margin: 10px auto;
     }
