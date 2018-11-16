@@ -13,7 +13,7 @@ namespace final
         {
             var result = from f in BD.Foods
                          where (f.IdRestaurant == idRestaurant && f.Kind == type)
-                         select new {f.Id, f.Name, f.Description, f.Price, f.Avatar};
+                         select new {f.Id, f.Nombre, f.Description, f.Price, f.Avatar};
 
             string[][] data = null;
 
@@ -27,7 +27,7 @@ namespace final
                     string[] registroArr = new string[5];
 
                     registroArr[0] = registro.Id.ToString(); 
-                    registroArr[1] = registro.Name;
+                    registroArr[1] = registro.Nombre;
                     registroArr[2] = registro.Description;
                     registroArr[3] = registro.Price.ToString();
                     registroArr[4] = registro.Avatar;
@@ -48,7 +48,7 @@ namespace final
         {
             var result = from f in BD.Foods
                          where (f.Id == id)
-                         select new {f.Name, f.Description, f.Price};
+                         select new {f.Nombre, f.Description, f.Price};
 
             string[][] data = null;
 
@@ -61,7 +61,7 @@ namespace final
                     var registro = result.ToArray()[i];
                     string[] registroArr = new string[3];
 
-                    registroArr[0] = registro.Name;
+                    registroArr[0] = registro.Nombre;
                     registroArr[1] = registro.Description;
                     registroArr[2] = registro.Price.ToString();
 

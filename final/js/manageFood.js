@@ -1,5 +1,5 @@
 ﻿var register;
-var name, background, city, address, phone, avatar;
+var nombre, background, city, address, phone, avatar;
 var state;
 
 window.onload = inicializar;
@@ -19,11 +19,12 @@ function inicializar()
 
 function initVariables()
 {
-    name = document.getElementById('name');
+    nombre = document.getElementById('nombre');
     description = document.getElementById('description');
     price = document.getElementById('price');
     kind = document.getElementById('kind');
     avatar = document.getElementById('avatar');
+    state = document.getElementById('state');
 
     register = document.getElementById('register');
 }
@@ -41,7 +42,7 @@ function registrar()
 
     var food =
     {
-        name: name.value,
+        nombre: nombre.value,
         description: description.value,
         price: price.value,
         kind: kind.value,
@@ -61,7 +62,7 @@ function registrar()
             {
                 if (data)
                 {
-                    location.href = '#managePage.html';
+                    location.href = 'managePage.html';
                 }
 
                 else

@@ -1,5 +1,5 @@
 ﻿var register;
-var name, background, city, address, phone, avatar;
+var nombre, background, city, address, phone, avatar;
 var state;
 
 window.onload = inicializar;
@@ -19,7 +19,7 @@ function inicializar()
 
 function initVariables()
 {
-    name = document.getElementById('name');
+    nombre = document.getElementById('nombre');
     background = document.getElementById('background');
     city = document.getElementById('city');
     address = document.getElementById('address');
@@ -40,9 +40,9 @@ function registrar()
     state.style.background = "orangered";
     state.innerHTML = "Estamos creando el restaurante...";
 
-    var restaurante =
+    var restaurant =
     {
-        name: name.value,
+        nombre: nombre.value,
         background: background.value,
         city: city.value,
         address: address.value,
@@ -51,19 +51,20 @@ function registrar()
         idOwner: localStorage.getItem('idUser')
     };
 
+    
     $.ajax
     (
         {
             url: '../api/restaurant',
             type: 'POST',
-            data: JSON.stringify(restaurante),
+            data: JSON.stringify(restaurant),
             contentType: "application/json;charset=utf-8",
             success:
             function (data)
             {
                 if (data)
                 {
-                    location.href = '#managePage.html';
+                    location.href = 'managePage.html';
                 }
 
                 else
