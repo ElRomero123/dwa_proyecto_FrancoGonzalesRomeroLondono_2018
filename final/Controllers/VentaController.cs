@@ -37,7 +37,7 @@ namespace final
             return result; 
         }
 
-        public bool Post(int idPedido, int orden)
+        public bool Post(int idPedido, int orden, int segundos)
         {
             bool result;
             try
@@ -46,6 +46,7 @@ namespace final
                 {
                     O.Venta venta = BD.Ventas.FirstOrDefault(x => x.Id == idPedido);
                     venta.Start = true;
+                    venta.TimeWait = segundos;
                     BD.SaveChanges();    
                 }
 
@@ -96,11 +97,20 @@ namespace final
 
         public bool Get(string hashVenta)
         {
-            var result = from v in BD.Ventas
-                         where (v.HashVenta == hashVenta)
-                         select new  { v.Start };
+                var result = from v in BD.Ventas
+                             where (v.HashVenta == hashVenta)
+                             select new { v.Start };
 
             return result.ToArray()[0].Start;
+        }
+
+        public int Get(string hashVenta, string vacio)
+        {
+            var result = from v in BD.Ventas
+                         where (v.HashVenta == hashVenta)
+                         select new { v.TimeWait };
+
+            return result.ToArray()[0].TimeWait;
         }
 
         private string SHA256Encrypt(string input)

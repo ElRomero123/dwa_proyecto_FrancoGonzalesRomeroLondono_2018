@@ -1,8 +1,8 @@
 ﻿namespace final.Models
 {
-    public class Restaurante
+    public class Restaurant
     {
-        public string Name {get; set;}
+        public string Nombre {get; set;}
         public string Background { get; set; }
         public string City { get; set; }
         public string Address { get; set; }

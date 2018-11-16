@@ -67,6 +67,7 @@ function toMenu()
 
 function configRestaurant(id)
 {
+    localStorage.setItem('idR', id);
     btnNewFood.style.visibility = 'visible';
     btnNewRestaurante.style.visibility = 'hidden';
     titulo.innerHTML = 'Lista de ordenes!';
@@ -76,7 +77,7 @@ function configRestaurant(id)
     $.ajax
     (
         {
-            url: '../api/venta?idRestaurant=' + id,
+            url: '../api/venta?idRestaurant=' + localStorage.getItem('idR'),
             type: 'GET',
             contentType: "application/json;charset=utf-8",
             success:
@@ -85,7 +86,7 @@ function configRestaurant(id)
                 var elements = '';
                 for (var i = 0; i < data.length; i++)
                 {
-                    elements += "<div class='orderItem'> <div> <div class='hash'>" + data[i][1] + "</div> <div>" + data[i][2] + "</div> <div>" + data[i][3] + "</div> <div>" + data[i][4] + "</div> <button id='" + data[i][0] + "' onclick='start(this.id)'>PREPARAR</button> <button id='" + data[i][0] + "' onclick='received(this.id)'>RECIBIDO</button> </div> </div>";
+                    elements += "<div class='orderItem'> <div> <div class='hash'>" + data[i][1] + "</div> <div>" + data[i][2] + "</div> <div>" + data[i][3] + "</div> <div>" + data[i][4] + "</div> <input id='" + data[i][0] + "' type='number' placeholder='Segundos de preparación' /> <button id='" + data[i][0] + "' onclick='start(this.id)'>PREPARAR</button> <button id='" + data[i][0] + "' onclick='received(this.id)'>RECIBIDO</button> </div> </div>";
                 }
 
                 $('#foodOrders').append(elements);
@@ -99,7 +100,7 @@ function start(id)
     $.ajax
     (
         {
-            url: '../api/venta?idPedido=' + id + '&orden=' + 1,
+            url: '../api/venta?idPedido=' + id + '&orden=' + 1 + '&segundos=' + document.getElementById(id).value,
             type: 'POST',
             contentType: "application/json;charset=utf-8",
 
@@ -120,7 +121,7 @@ function received(id)
     $.ajax
     (
         {
-            url: '../api/venta?idPedido=' + id + '&orden=' + 2,
+            url: '../api/venta?idPedido=' + id + '&orden=' + 2 + '&segundos=' + 0,
             type: 'GET',
             contentType: "application/json;charset=utf-8",
 
@@ -143,5 +144,5 @@ function toNewRestaurant()
 
 function toNewFood()
 {
-    alert("Nuevo plato también funciona!");
+    location.href = 'manageFood.html';
 }

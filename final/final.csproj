@@ -129,6 +129,7 @@
     <Content Include="js\reservaRestaurants.js" />
     <Content Include="js\index.js" />
     <Content Include="manageFood.html" />
+    <Content Include="manageRestaurant.html" />
     <Content Include="ORM\ModelEatNow.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelEatNow.edmx</DependentUpon>
@@ -139,7 +140,6 @@
       <DependentUpon>ModelEatNow.edmx</DependentUpon>
       <LastGenOutput>ModelEatNow.cs</LastGenOutput>
     </Content>
-    <Content Include="manageRestaurant.html" />
     <Content Include="register.html" />
     <Content Include="managePage.html" />
     <Content Include="reservaRestaurants.html" />
@@ -154,7 +154,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Models\Restaurante.cs" />
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\Venta.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ORM\Food.cs">

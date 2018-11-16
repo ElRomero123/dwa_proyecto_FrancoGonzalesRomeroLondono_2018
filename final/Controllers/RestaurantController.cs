@@ -13,7 +13,7 @@ namespace final
         {
             var result = from r in BD.Restaurants
                          where (true)
-                         select new { r.Id, r.Name, r.Phone, r.Background, r.Address, r.City, r.Avatar};
+                         select new { r.Id, r.Nombre, r.Phone, r.Background, r.Address, r.City, r.Avatar};
 
             string[][] data = null;
 
@@ -27,7 +27,7 @@ namespace final
                     string[] registroArr = new string[7];
 
                     registroArr[0] = registro.Id.ToString(); //
-                    registroArr[1] = registro.Name; //
+                    registroArr[1] = registro.Nombre; //
                     registroArr[2] = registro.Phone.ToString();
                     registroArr[3] = registro.Background; //
                     registroArr[4] = registro.Address; //
@@ -50,7 +50,7 @@ namespace final
         {
             var result = from r in BD.Restaurants
                          where (r.IdOwner == idOwner)
-                         select new {r.Id, r.Name, r.Background};
+                         select new {r.Id, r.Nombre, r.Background};
 
             string[][] data = null;
 
@@ -64,7 +64,7 @@ namespace final
                     string[] registroArr = new string[3];
 
                     registroArr[0] = registro.Id.ToString();
-                    registroArr[1] = registro.Name; 
+                    registroArr[1] = registro.Nombre; 
                     registroArr[2] = registro.Background;
 
                     data[i] = registroArr;
@@ -79,14 +79,14 @@ namespace final
             return data;
         }
 
-        public bool Post(M.Restaurante entrada)
+        public bool Post(M.Restaurant entrada)
         {
             bool result;
 
             try
             {
                 #pragma warning disable CS0618 // El tipo o el miembro están obsoletos
-                AutoMapper.Mapper.CreateMap<M.Restaurante, O.Restaurant>();
+                AutoMapper.Mapper.CreateMap<M.Restaurant, O.Restaurant>();
                 #pragma warning restore CS0618 // El tipo o el miembro están obsoletos
                 O.Restaurant BDRestaurante = AutoMapper.Mapper.Map<O.Restaurant>(entrada);
                 BD.Restaurants.Add(BDRestaurante);
