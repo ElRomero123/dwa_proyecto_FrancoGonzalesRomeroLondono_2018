@@ -67,6 +67,7 @@
           <Property Name="HashVenta" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Received" Type="bit" Nullable="false" />
           <Property Name="Start" Type="bit" Nullable="false" />
+          <Property Name="TimeWait" Type="int" Nullable="false" />
           <Property Name="IdRestaurant" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Food_Restaurant">
@@ -202,6 +203,7 @@
           <Property Name="HashVenta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Received" Type="Boolean" Nullable="false" />
           <Property Name="Start" Type="Boolean" Nullable="false" />
+          <Property Name="TimeWait" Type="Int32" Nullable="false" />
           <Property Name="IdRestaurant" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Restaurant" Relationship="Self.FK_Venta_Restaurant" FromRole="Venta" ToRole="Restaurant" />
         </EntityType>
@@ -337,6 +339,7 @@
                 <ScalarProperty Name="HashVenta" ColumnName="HashVenta" />
                 <ScalarProperty Name="Received" ColumnName="Received" />
                 <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="TimeWait" ColumnName="TimeWait" />
                 <ScalarProperty Name="IdRestaurant" ColumnName="IdRestaurant" />
               </MappingFragment>
             </EntityTypeMapping>

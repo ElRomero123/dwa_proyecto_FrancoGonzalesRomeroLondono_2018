@@ -9,6 +9,10 @@ var back, menu;
 var titulo, ordenar, finish, hash;
 var interval, result = false;
 var stateWait, stateStarted, stateFinish;
+var tagTitle, tagSeconds;
+
+var segundo = 10;
+var intervalo2;
 
 window.onload = inicializar;
 
@@ -43,6 +47,9 @@ function initProfile()
     stateWait = document.getElementById('stateWait');
     stateStarted = document.getElementById('stateStarted');
     stateFinish = document.getElementById('stateFinish');
+
+    tagTitle = document.getElementById('tagTitle');
+    tagSeconds = document.getElementById('tagSeconds');
 
     nombre.innerHTML = localStorage.getItem('name');
     phone.innerHTML = localStorage.getItem('phone');
@@ -227,6 +234,7 @@ function finalizar()
         hashVenta: '',
         received: false,
         start: false,
+        timeWait: 10,
         idRestaurant: rId
     };
     
@@ -276,6 +284,42 @@ function consultarEstado()
     {
         stateStarted.style.background = 'orange';
         stateWait.style.background = 'darkgray';
+        countDown();
         clearInterval(intervalo);
+    }
+}
+
+function countDown()
+{
+    tagTitle.style.visibility = 'visible';
+    tagSeconds.style.visibility = 'visible';
+
+    $.ajax
+    (
+        {
+            url: '../api/venta?hashVenta=' + hash.innerHTML + '&vacio=' + "Hola",
+            type: 'GET',
+            contentType: "application/json;charset=utf-8",
+            success:
+            function (data)
+            {
+                segundo = data;
+            }
+        }
+    );
+
+    intervalo2 = setInterval(cronometro, 1000);
+}
+
+function cronometro()
+{
+    segundo--;
+    tagSeconds.innerHTML = segundo;
+
+    if (segundo === 0)
+    {
+        stateStarted.style.background = 'darkgray';
+        stateFinish.style.background = 'green';
+        clearInterval(intervalo2);
     }
 }

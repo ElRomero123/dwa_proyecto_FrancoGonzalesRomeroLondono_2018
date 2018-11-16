@@ -21,6 +21,7 @@ namespace final.ORM
         public string HashVenta { get; set; }
         public bool Received { get; set; }
         public bool Start { get; set; }
+        public int TimeWait { get; set; }
         public int IdRestaurant { get; set; }
     
         public virtual Restaurant Restaurant { get; set; }
